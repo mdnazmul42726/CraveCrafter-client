@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 
 const Root = () => {
 
@@ -28,6 +29,8 @@ const Root = () => {
                     <a className="btn">Button</a>
                 </div>
             </div>
+                {/* Outlet */}
+                <div className=""><Outlet /></div>
         </div>
     );
 };
