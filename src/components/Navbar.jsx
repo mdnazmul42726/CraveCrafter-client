@@ -1,8 +1,31 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
 
-    const user = false
+    const handleLogout = () => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Sign Out!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                logOut();
+                Swal.fire(
+                    'Good Luck!',
+                    'Logout Successful.',
+                    'success'
+                )
+            }
+        })
+    }
 
     return (
         <div>
@@ -50,7 +73,7 @@ const Navbar = () => {
                                     </a>
                                 </li>
                                 <li><a>Settings</a></li>
-                                <li><a>Logout</a></li>
+                                <li><a onClick={handleLogout}>Logout</a></li>
                             </ul>
                         </div> :
                             <NavLink to={'/login'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-red-600'}>Login</NavLink>}

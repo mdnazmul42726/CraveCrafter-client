@@ -1,19 +1,27 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../assets/050270aa95e1685d73bfc48562c784b5.jpg'
-import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
+import { useContext } from 'react';
+import { AuthContext } from '../AuthProvider';
 
 const Login = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
-    console.log(location);
+    const { logInWithEmailAndPassword, popupSignInWithGithub, popupSignInWithGoogle, isLoading, user } = useContext(AuthContext);
 
     const handleSignIn = (evant) => {
         evant.preventDefault();
         const form = evant.target;
         const email = form.email.value;
         const password = form.password.value;
+
+        logInWithEmailAndPassword(email, password).then(result => console.log(result.user)).catch(err => console.log(err))
     };
+
+    const handleSocialLogin = (media) => {
+        media().then(result => {
+            console.log(result.user);
+        }).catch(err => console.log(err))
+    }
 
     return (
         <div>
@@ -47,9 +55,9 @@ const Login = () => {
                         </form>
                         <h3 className='text-center'>Or Sign in with</h3>
                         <div className="flex justify-center gap-3 text-xl mt-3 mb-4">
-                            <FaFacebook className='text-sky-700 cursor-pointer' />
-                            <FaTwitter className='text-sky-800 cursor-pointer' />
-                            <FaGoogle className='text-red-600 cursor-pointer' />
+                            {/* <FaFacebook className='text-sky-700 cursor-pointer' /> */}
+                            <FaGithub className='text-sky-800 cursor-pointer' onClick={() => handleSocialLogin(popupSignInWithGithub)} />
+                            <FaGoogle className='text-red-600 cursor-pointer' onClick={() => handleSocialLogin(popupSignInWithGoogle)} />
                         </div>
                         <p className='mb-5 text-center'>Don't have an account? <Link className='text-red-500 font-bold' to={"/register"}>Register</Link></p>
                     </div>
