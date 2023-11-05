@@ -7,14 +7,16 @@ import Home from "./pages/Home";
 import Login from "./pages/LogIn";
 import Register from "./pages/Register";
 import AuthProvider from "./AuthProvider";
+import TopPrdctDtls from "./pages/TopPrdctDtls";
 
 const router = createBrowserRouter([
   {
     path: "/", element: <Root />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <Home />, loader: () => fetch('http://localhost:5000/foods/top/v1') },
       { path: "/login", element: <Login /> },
-      { path: "/register", element: <Register /> }
+      { path: "/register", element: <Register /> },
+      { path: "/top-food/:id", element: <TopPrdctDtls />, loader: ({ params }) => fetch(`http://localhost:5000/top-food/v1/${params.id}`) }
     ]
   },
 ]);

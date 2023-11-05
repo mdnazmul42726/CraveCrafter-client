@@ -73,7 +73,7 @@ const Navbar = () => {
                                     </a>
                                 </li>
                                 <li><a>Settings</a></li>
-                                <li><a onClick={handleLogout}>Logout</a></li>
+                                <li><a onClick={handleLogout} className="text-red-600 font-bold">Logout</a></li>
                             </ul>
                         </div> :
                             <NavLink to={'/login'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-red-600'}>Login</NavLink>}

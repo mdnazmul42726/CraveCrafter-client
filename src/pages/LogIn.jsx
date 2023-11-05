@@ -4,6 +4,7 @@ import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const { logInWithEmailAndPassword, popupSignInWithGithub, popupSignInWithGoogle, isLoading, user } = useContext(AuthContext);
@@ -14,7 +15,15 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        logInWithEmailAndPassword(email, password).then(result => console.log(result.user)).catch(err => console.log(err))
+        const toastId = toast.loading('Working...');
+
+        logInWithEmailAndPassword(email, password).then(result => {
+            console.log(result.user)
+            toast.success('Login successful', { id: toastId });
+        }).catch(err => {
+            console.log(err);
+            toast.error(err.code, { id: toastId })
+        })
     };
 
     const handleSocialLogin = (media) => {
@@ -63,6 +72,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <Toaster />
         </div>
     );
 };

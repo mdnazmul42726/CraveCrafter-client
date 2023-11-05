@@ -4,11 +4,15 @@ import { GoRocket } from 'react-icons/go';
 import { BiLeaf } from 'react-icons/bi';
 import { BsFacebook } from 'react-icons/bs';
 import { RiTwitterXFill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 // import { FaXTwitter } from 'react-icons/fa';
 
 const Home = () => {
+    const topProducts = useLoaderData();
+    console.log(topProducts);
+
+
     return (
         <div className="mb-36">
             <div className="">
@@ -16,7 +20,7 @@ const Home = () => {
                 {/* hero */}
                 <div className="">
                     <div className="w-full text-white bg-[url('https://i.ibb.co/xC9mPGv/pexels-mikhail-nilov-8093877.jpg')] bg-cover ">
-                        <Navbar/>
+                        <Navbar />
                         {/* text */}
                         <div className="lg:w-1/2 ml-10 pb-10">
                             <h1 className="text-5xl mt-7 md:mt-10 lg:mt-20 font-mono">We Love <br />Delicious Foods!</h1>
@@ -143,29 +147,30 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
             {/* our top selling foods card */}
             <div className="my-36">
-                <h1 className='text-4xl font-bold text-center'>Pop Selling Foods</h1>
+                <h1 className='text-4xl font-bold text-center'>Top Selling Foods</h1>
                 <div className="grid grid-cols-1 md:grid-cols-3">
-                    <div className="mx-auto mt-11 w-80 transform overflow-hidden rounded-md shadow-md duration-300 hover:scale-105 hover:shadow-lg">
-                        <img className="h-48 w-full object-cover object-center" src="https://i.ibb.co/PZZrXd9/salmon-zucchini.jpg" alt="Product Image" />
+                    {topProducts.map(product => <div key={product._id} className="mx-auto mt-11 w-80 transform overflow-hidden rounded-md shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                        <img className="h-48 w-full object-cover object-center" src={product.food_img_url} alt="Product Image" />
                         <div className="p-4">
-                            <h2 className="mb-2 text-lg font-medium">Product Name</h2>
-                            <p className="text-base"><span className='font-semibold'>Category:</span> xxx</p>
-                            <p className=" text-base"><span className='font-semibold'>Orders:</span> 001</p>
+                            <h2 className="mb-2 text-lg font-medium">{product.food_name}</h2>
+                            <p className="text-base"><span className='font-semibold'>Category: </span>{product.food_category}</p>
+                            <p className=" text-base"><span className='font-semibold'>Orders: </span>{product.order}</p>
                             <div className="flex items-center">
-                                <p className="mr-2 text-2xl font-semibold">$20.00</p>
-                                <button className='ml-auto text-base font-medium bg-red-500 hover:bg-red-600 px-4 rounded-sm text-white py-2'>Details</button>
+                                <p className="mr-2 text-2xl font-semibold">${product.price}</p>
+                                <Link className='ml-auto text-base font-medium bg-red-500 hover:bg-red-600 px-4 rounded-sm text-white py-2' to={`/top-food/${product._id}`}><button>Details</button></Link>
                             </div>
                         </div>
-                    </div>
+                    </div>)}
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center mb-10 mt-20">
                     <button className=' text-base font-medium bg-red-500 hover:bg-red-600 px-4 rounded-sm text-white py-2'>See All</button>
                 </div>
             </div>
             {/* meet the tram */}
-            <div className="  ">
+            <div className="mt-20 ">
                 <div className="container max-w-7xl px-4">
                     <div className="flex flex-wrap justify-center text-center mb-24">
                         <div className="w-full lg:w-6/12 px-4">
@@ -178,7 +183,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="flex flex-wrap">
-                        <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="w-full md:w-6/12 lg:w-3/12 hover:scale-105 duration-300 mb-6 px-6 sm:px-6 lg:px-4">
                             <div className="flex flex-col">
                                 <a href="#" className="mx-auto">
                                     <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
@@ -207,7 +212,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="w-full md:w-6/12 lg:w-3/12 mb-6 hover:scale-105 duration-300 px-6 sm:px-6 lg:px-4">
                             <div className="flex flex-col">
 
                                 <a href="#" className="mx-auto">
@@ -238,7 +243,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="w-full md:w-6/12 lg:w-3/12 hover:scale-105 duration-300 mb-6 px-6 sm:px-6 lg:px-4">
                             <div className="flex flex-col">
 
                                 <a href="#" className="mx-auto">
@@ -267,7 +272,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="w-full md:w-6/12 lg:w-3/12 hover:scale-105 duration-300 mb-6 px-6 sm:px-6 lg:px-4">
                             <div className="flex flex-col">
                                 <a href="#" className="mx-auto">
                                     <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
