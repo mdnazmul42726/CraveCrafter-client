@@ -5,40 +5,43 @@ import { BiLeaf } from 'react-icons/bi';
 import { BsFacebook } from 'react-icons/bs';
 import { RiTwitterXFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 // import { FaXTwitter } from 'react-icons/fa';
 
 const Home = () => {
-
     return (
         <div className="">
-            <div className="w-11/12 mx-auto">
+            <div className="">
+                {/* <div className=" md:min-h-screen"></div> */}
                 {/* hero */}
-                <div className="w-full block lg:flex">
-                    {/* text */}
-                    <div className="lg:w-1/2">
-                        <h1 className="text-5xl mt-7 md:mt-10 lg:mt-20 font-mono">We Love <br />Delicious Foods!</h1>
-                        <p className="mt-3 mr-4">Our platform streamlines operations, enhances customer experiences, and empowers chefs and restaurateurs with data-driven insights. Discover the future of restaurant management and dining excellence at CuisineCraft – where culinary expertise meets cutting-edge technology.</p>
-                        <div className="mt-10 flex items-center gap-7">
-                            <button className="btn bg-[#F34949] px-7 hover:bg-[#F34949] hover:scale-105 text-white rounded-full">Explore Menu</button>
-                            <button className='hidden md:flex font-bold hover:text-red-600'><BsGooglePlay className='text-2xl hover:scale-110 transition-all hover:text-sky-400 mt-1 mr-2' /> <AiFillApple className='text-3xl hover:scale-110 transition-all hover:text-sky-300 mr-2' /><span className='mt-1'>Download App</span></button>
+                <div className="">
+                    <div className="w-full text-white bg-[url('https://i.ibb.co/xC9mPGv/pexels-mikhail-nilov-8093877.jpg')] bg-cover ">
+                        <Navbar/>
+                        {/* text */}
+                        <div className="lg:w-1/2 ml-10 pb-10">
+                            <h1 className="text-5xl mt-7 md:mt-10 lg:mt-20 font-mono">We Love <br />Delicious Foods!</h1>
+                            <p className="mt-3 mr-4">Our platform streamlines operations, enhances customer experiences, and empowers chefs and restaurateurs with data-driven insights. Discover the future of restaurant management and dining excellence at CuisineCraft – where culinary expertise meets cutting-edge technology.</p>
+                            <div className="mt-10 flex items-center gap-7">
+                                <button className="btn bg-[#F34949] px-7 hover:bg-[#F34949] hover:scale-105 text-white rounded-full">Explore Menu</button>
+                                <button className='hidden md:flex font-bold hover:text-red-600'><BsGooglePlay className='text-2xl hover:scale-110 transition-all hover:text-sky-400 mt-1 mr-2' /> <AiFillApple className='text-3xl hover:scale-110 transition-all hover:text-sky-300 mr-2' /><span className='mt-1'>Download App</span></button>
+                            </div>
+                            <div className="flex justify-center gap-10 mt-20 md:mr-10 lg:mr-16">
+                                <div className=" flex hover:scale-105 transition-all hover:text-red-500 flex-col place-items-center border-r pr-10">
+                                    <GoRocket className='text-4xl font-light' />
+                                    <p>Fast Delivery</p>
+                                </div>
+                                <div className=" flex hover:scale-105 transition-all hover:text-red-500 flex-col place-items-center">
+                                    <BiLeaf className='text-4xl' />
+                                    <p>Fresh Food</p>
+                                </div>
+                                <div className=" flex hover:scale-105 transition-all hover:text-red-500 flex-col border-l pl-10 place-items-center">
+                                    <BsDoorOpen className='text-4xl' />
+                                    <p>24/7 Open</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex justify-center gap-10 mt-20 md:mr-10 lg:mr-16">
-                            <div className=" flex hover:scale-105 transition-all hover:text-red-500 flex-col place-items-center border-r pr-10">
-                                <GoRocket className='text-4xl font-light' />
-                                <p>Fast Delivery</p>
-                            </div>
-                            <div className=" flex hover:scale-105 transition-all hover:text-red-500 flex-col place-items-center">
-                                <BiLeaf className='text-4xl' />
-                                <p>Fresh Food</p>
-                            </div>
-                            <div className=" flex hover:scale-105 transition-all hover:text-red-500 flex-col border-l pl-10 place-items-center">
-                                <BsDoorOpen className='text-4xl' />
-                                <p>24/7 Open</p>
-                            </div>
-                        </div>
-                    </div>
-                    {/* img */}
-                    <div className="md:w-1/2 hidden lg:block">
+                        {/* img */}
+                        {/* <div className="md:w-1/2 hidden lg:block">
                         <div className="h-[540px] carousel carousel-vertical">
                             <div className="carousel-item h-full">
                                 <img src="https://i.ibb.co/2nWM6cf/hero-1.jpg" />
@@ -68,10 +71,11 @@ const Home = () => {
                                 <img src="https://i.ibb.co/2sCWyVN/hero-3.jpg" />
                             </div>
                         </div>
+                    </div> */}
                     </div>
                 </div>
                 {/* About */}
-                <div className="flex flex-col md:flex-row gap-5 mt-20 md:mt-20 lg:mt-36">
+                <div className="flex flex-col md:flex-row w-11/12 mx-auto gap-5 mt-20 md:mt-20 lg:mt-36">
                     <div className="md:w-1/2">
                         <img className='md:w-[90%]' src="https://i.ibb.co/d78QkGt/hero-2.jpg" alt="" />
                     </div>
@@ -410,17 +414,17 @@ const Home = () => {
             </div>
             {/* Book */}
 
-            <div className="bg-[url('https://i.ibb.co/0J5pyT5/reservation-bg.jpg')] mb-96 md:min-h-screen">
+            <div className="bg-[url('https://i.ibb.co/0J5pyT5/reservation-bg.jpg')] md:min-h-screen">
                 <div className="w-full md:w-96 h-[500px] bg-white md:ml-10 ">
                     <p className='text-red-500 text-center pt-10 font-mono'>Reservation</p>
                     <h1 className='text-3xl text-center font-sans'>Book Now</h1>
                     <form className='p-10'>
                         <input className='p-2 w-full border rounded-sm mb-3' type="text" name="" id="" placeholder='Name' required />
-                        <input className='p-2 w-full border rounded-sm mb-3' type="text" name="" id="" placeholder='Email' required/>
-                        <input className='p-2 w-full border rounded-sm' type="text" name="" id="" placeholder='Phone' required/>
+                        <input className='p-2 w-full border rounded-sm mb-3' type="text" name="" id="" placeholder='Email' required />
+                        <input className='p-2 w-full border rounded-sm' type="text" name="" id="" placeholder='Phone' required />
                         <div className="flex mt-3 gap-3">
-                            <input className='p-2 w-full border rounded-sm' type="date" name="" id="" placeholder='Date' required/>
-                            <input className='p-2 w-full border rounded-sm' type="time" name="" id="" placeholder='Time' required/>
+                            <input className='p-2 w-full border rounded-sm' type="date" name="" id="" placeholder='Date' required />
+                            <input className='p-2 w-full border rounded-sm' type="time" name="" id="" placeholder='Time' required />
                         </div>
                         <select className='p-2 w-full border rounded-sm mt-3' name="" id="" required>
                             <option value="N/A">Person</option>
@@ -431,7 +435,7 @@ const Home = () => {
                             <option value="6">6</option>
                         </select>
                         <div className="flex justify-center">
-                        <button type='submit' className="btn mt-5 ml-3 bg-[#F34949] px-7 hover:bg-[#F34949] hover:scale-105 text-white rounded-full">Book A Table</button>
+                            <button type='submit' className="btn mt-5 ml-3 bg-[#F34949] px-7 hover:bg-[#F34949] hover:scale-105 text-white rounded-full">Book A Table</button>
                         </div>
                     </form>
                 </div>
