@@ -17,7 +17,7 @@ const Login = () => {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div className="hero min-h-screen mt-20">
                 <div className="hero-content -mt-52 flex-col lg:flex-row">
                     <div className="mr-20 hidden md:flex">
@@ -41,15 +41,15 @@ const Login = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
-                            <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Login" />
+                            <div className="form-control mt-2">
+                                <button className="btn bg-[#F34949] px-7 hover:bg-red-600 text-white rounded-md">Login</button>
                             </div>
                         </form>
                         <h3 className='text-center'>Or Sign in with</h3>
                         <div className="flex justify-center gap-3 text-xl mt-3 mb-4">
                             <FaFacebook className='text-sky-700 cursor-pointer' />
                             <FaTwitter className='text-sky-800 cursor-pointer' />
-                            <FaGoogle className='text-red-600 cursor-pointer'/>
+                            <FaGoogle className='text-red-600 cursor-pointer' />
                         </div>
                         <p className='mb-5 text-center'>Don't have an account? <Link className='text-red-500 font-bold' to={"/register"}>Register</Link></p>
                     </div>
