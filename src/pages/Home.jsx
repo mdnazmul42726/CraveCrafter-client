@@ -10,7 +10,7 @@ import Navbar from '../components/Navbar';
 
 const Home = () => {
     return (
-        <div className="">
+        <div className="mb-36">
             <div className="">
                 {/* <div className=" md:min-h-screen"></div> */}
                 {/* hero */}

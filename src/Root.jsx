@@ -12,7 +12,7 @@ const Root = () => {
 
             {/* footer */}
 
-            <div className="mt-52 mb-7 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 md:space-x-20 space-y-10 md:space-y-0">
+            <div className="mt-10 mb-7 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 md:space-x-20 space-y-10 md:space-y-0">
                 <div className="">
                     <a className="text-3xl font-bold">Crave<span className="font-serif text-[#E32106]">Crafter.</span></a>
                     <p className="mt-3 mr-4 opacity-75">Our platform streamlines operations, enhances customer experiences, and empowers chefs and restaurateurs with data-driven insights. Discover the future of restaurant management and dining excellence at CuisineCraft – where culinary expertise meets cutting-edge technology.</p>

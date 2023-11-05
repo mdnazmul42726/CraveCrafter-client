@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
-    const user = true
+    const user = false
 
     return (
         <div>
@@ -14,7 +14,7 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
-                                <NavLink to={'/'} className={({ isActive }) => isActive ? 'text-red-600' : ''}>Home</NavLink>
+                                <NavLink to={'/'} className={({ isActive }) => isActive ? 'text-red-600' : 'text'}>Home</NavLink>
                             </li>
                             <li>
                                 <NavLink to={'/'} className={({ isActive }) => isActive ? 'text-red-600' : ''}>Home</NavLink>
@@ -30,9 +30,9 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 gap-5">
-                            <NavLink to={'/'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-white font-bold'}>Home</NavLink>
-                            <NavLink to={'/blogs'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-white font-bold'}>Blogs</NavLink>
-                            <NavLink to={'/foods'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-white font-bold'}>Foods</NavLink>
+                            <NavLink to={'/'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-red-600 '}>Home</NavLink>
+                            <NavLink to={'/blogs'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-red-600'}>Blogs</NavLink>
+                            <NavLink to={'/foods'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-red-600'}>Foods</NavLink>
                         </ul>
                     </div>
                     <div className="ml-3">
@@ -53,7 +53,7 @@ const Navbar = () => {
                                 <li><a>Logout</a></li>
                             </ul>
                         </div> :
-                            <NavLink to={'/foods'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-white font-bold'}>Login</NavLink>}
+                            <NavLink to={'/login'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-red-600'}>Login</NavLink>}
                     </div>
                 </div>
             </div>
