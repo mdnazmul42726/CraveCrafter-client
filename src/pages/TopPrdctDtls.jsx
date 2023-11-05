@@ -9,7 +9,7 @@ const TopPrdctDtls = () => {
         <div>
             <Navbar />
             <div className="min-h-screen">
-                <section className="py-10 font-poppins">
+                <section className="py-12 font-poppins">
                     <div className="max-w-6xl px-4 mx-auto">
                         <div className="flex flex-wrap mb-24 -mx-4">
                             <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0">
