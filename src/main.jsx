@@ -8,10 +8,11 @@ import Login from "./pages/LogIn";
 import Register from "./pages/Register";
 import AuthProvider from "./AuthProvider";
 import TopPrdctDtls from "./pages/TopPrdctDtls";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "/", element: <Root />,
+    path: "/", element: <Root />, errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home />, loader: () => fetch('http://localhost:5000/foods/top/v1') },
       { path: "/login", element: <Login /> },
