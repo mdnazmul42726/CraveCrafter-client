@@ -47,7 +47,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="text-3xl font-bold">Crave<span className="font-serif text-[#E32106]">Crafter.</span></a>
+                    <a className="text-3xl font-bold text-white">Crave<span className="font-serif text-[#E32106]">Crafter.</span></a>
                 </div>
 
                 <div className="navbar-end">

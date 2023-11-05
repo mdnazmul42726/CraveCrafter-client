@@ -9,6 +9,8 @@ import Register from "./pages/Register";
 import AuthProvider from "./AuthProvider";
 import TopPrdctDtls from "./pages/TopPrdctDtls";
 import ErrorPage from "./pages/ErrorPage";
+import Foods from "./pages/Foods";
+import ProdctDtls from "./pages/ProdctDtls";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +19,9 @@ const router = createBrowserRouter([
       { index: true, element: <Home />, loader: () => fetch('http://localhost:5000/foods/top/v1') },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
-      { path: "/top-food/:id", element: <TopPrdctDtls />, loader: ({ params }) => fetch(`http://localhost:5000/top-food/v1/${params.id}`) }
+      { path: "/top-food/:id", element: <TopPrdctDtls />, loader: ({ params }) => fetch(`http://localhost:5000/top-food/v1/${params.id}`) },
+      { path: "/foods", element: <Foods />, loader: () => fetch('http://localhost:5000/foods/v1') },
+      {path: "/food/:id", element: <ProdctDtls/>, loader: ({params})=> fetch(`http://localhost:5000/food/v1/${params.id}`)}
     ]
   },
 ]);
