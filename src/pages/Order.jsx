@@ -29,7 +29,9 @@ const Order = () => {
             // Swal.fire('Out of stock!')
             Swal.fire({
                 title: 'Out Of stock!',
-                icon: 'error'
+                icon: 'error',
+                text: 'We will make a stack of items available as soon as possible',
+
             });
         }
     };
@@ -54,6 +56,13 @@ const Order = () => {
                 icon: 'error'
             });
 
+        } else if (selectedFood.quantity <= 0) {
+            Swal.fire({
+                title: "Out of Stock!",
+                text: 'We will make a stack of items available as soon as possible',
+                icon: 'error'
+            });
+
         } else {
             axios.post('http://localhost:5000/food/order/v1', orderData).then(res => {
                 if (res.data.insertedId) {
@@ -69,8 +78,6 @@ const Order = () => {
                 }
             }).catch(err => console.log(err))
         }
-
-
     }
 
     return (
