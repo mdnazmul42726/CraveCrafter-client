@@ -14,7 +14,8 @@ function AddFood() {
         const food_name = form.foodName.value;
         const food_img_url = form.foodImg.value;
         const food_category = form.category.value;
-        const quantity = form.quantity.value;
+        const quantityString = form.quantity.value;
+        const quantity = parseInt(quantityString);
         const origin = form.origin.value;
         const addedBy = user.displayName;
         const email = user.email;
@@ -28,6 +29,14 @@ function AddFood() {
             Swal.fire({
                 title: 'Invalid price!',
                 text: "Can't give anything without a number in the price field. Because it will be difficult to calculate the price later",
+                icon: 'error'
+            })
+            return
+        }
+        if (!quantity) {
+            Swal.fire({
+                title: 'Invalid quantity!',
+                text: "Can't give anything without a number in the quantity field. Because it will be difficult to calculate the price later",
                 icon: 'error'
             })
             return

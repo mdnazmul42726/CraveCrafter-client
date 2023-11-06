@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -54,22 +55,27 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="ml-3">
-                        {user ? <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src={user.photoURL} />
-                                </div>
-                            </label>
-                            <ul tabIndex={0} className="mt-3 z-[1] text-black p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-80">
-                                <li>
-                                    <a className="justify-between">
-                                        {user.displayName}
-                                        <span className="badge">New</span>
-                                    </a>
-                                </li>
-                                <li><a>Settings</a></li>
-                                <li><a onClick={handleLogout} className="text-red-600 font-bold">Logout</a></li>
-                            </ul>
+                        {user ? <div className="flex items-center gap-2">
+                            <NavLink to={"/cart"} className={({ isActive }) => isActive ? 'text-sky-600' : 'text-red-600'}> <AiOutlineShoppingCart title="Cart" className="text-2xl" /></NavLink>
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user.photoURL} />
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="mt-3 z-[1] text-black p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-80">
+                                    <li>
+                                        <a className="justify-between">
+                                            {user.displayName}
+                                            <span className="badge">New</span>
+                                        </a>
+                                    </li>
+                                    <NavLink to={'/add-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>Add Food</a></li></NavLink>
+                                    <NavLink to={'/my-added-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Added Food</a></li></NavLink>
+
+                                    <li><a onClick={handleLogout} className="text-red-600 font-bold">Logout</a></li>
+                                </ul>
+                            </div>
                         </div> :
                             <NavLink to={'/login'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-red-600'}>Login</NavLink>}
                     </div>

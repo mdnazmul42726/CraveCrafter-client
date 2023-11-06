@@ -17,6 +17,7 @@ import OrderTop from "./pages/OrderTop";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogDtls";
 import AddFood from "./pages/AddFood";
+import Cart from "./pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,9 @@ const router = createBrowserRouter([
       { path: "/blogs", element: <Blog />, loader: () => fetch('http://localhost:5000/blogs/v1') },
       { path: "/blog/:id", element: <BlogPost />, loader: ({ params }) => fetch(`http://localhost:5000/blog/v1/${params.id}`) },
 
-      { path: "/add-food", element: <AddFood /> }
+      { path: "/add-food", element: <PrivateRoute><AddFood /></PrivateRoute> },
+
+      { path: "/cart", element: <PrivateRoute><Cart /></PrivateRoute> }
 
     ]
   },

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Order = () => {
     const selectedFood = useLoaderData();
-    console.log(selectedFood);
+    // console.log(selectedFood);
     const { user } = useContext(AuthContext);
     const [price, setPrice] = useState(selectedFood.price);
     const [quantity, setQuantity] = useState(1);
@@ -62,6 +62,10 @@ const Order = () => {
                         text: 'The order has been accepted successfully, you can view and manage all your orders on the my order page',
                         icon: 'success'
                     });
+
+                    const newCuantity = { quantity: selectedFood.quantity - quantity };
+
+                    axios.patch(`http://localhost:5000/quantity/v1/${selectedFood._id}`, newCuantity).then(res => console.log(res.data)).catch(err => console.log(err));
                 }
             }).catch(err => console.log(err))
         }
