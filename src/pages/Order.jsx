@@ -37,7 +37,6 @@ const Order = () => {
     const handleOrder = (event) => {
         event.preventDefault();
         const form = event.target;
-
         const buyerName = user.displayName;
         const buyerEmail = user.email
         const foodName = selectedFood.food_name;
@@ -51,7 +50,7 @@ const Order = () => {
 
         if (selectedFood.addedBy == user.displayName) {
             Swal.fire({
-                title: 'Out Of stock!',
+                title: "You can't buy your own added food!",
                 icon: 'error'
             });
 
