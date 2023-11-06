@@ -8,6 +8,8 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const { logInWithEmailAndPassword, popupSignInWithGithub, popupSignInWithGoogle, isLoading, user } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleSignIn = (evant) => {
         evant.preventDefault();
@@ -23,12 +25,13 @@ const Login = () => {
         }).catch(err => {
             console.log(err);
             toast.error(err.code, { id: toastId })
-        })
+        });
     };
 
     const handleSocialLogin = (media) => {
         media().then(result => {
             console.log(result.user);
+            navigate(location.state ? location.state : '/')
         }).catch(err => console.log(err))
     }
 

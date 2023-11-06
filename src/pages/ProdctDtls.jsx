@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
 import Swal from "sweetalert2";
@@ -14,13 +14,13 @@ const ProdctDtls = () => {
         }
     };
 
-    const handleCountPosetive = () => {
-        if (count < prodct.quantity) {
-            setCount(count + 1)
-        } else {
-            Swal.fire('Out of stock!')
-        }
-    }
+    // const handleCountPosetive = () => {
+    //     if (count < prodct.quantity) {
+    //         setCount(count + 1)
+    //     } else {
+    //         Swal.fire('Out of stock!')
+    //     }
+    // }
 
     return (
         <div>
@@ -89,7 +89,7 @@ const ProdctDtls = () => {
                                         <div className="flex flex-wrap items-center mb-6">
                                             <div className="mb-4 mr-4 lg:mb-0">
                                                 <div className="w-28">
-                                                    <div className="relative flex flex-row w-full h-10 bg-transparent rounded-lg">
+                                                    {/* <div className="relative flex flex-row w-full h-10 bg-transparent rounded-lg">
                                                         <button className="w-20 h-full border border-l rounded-l outline-none cursor-pointer" onClick={handleCountNagetive}>
                                                             <span className="m-auto text-2xl font-thin">-</span>
                                                         </button>
@@ -97,10 +97,10 @@ const ProdctDtls = () => {
                                                         <button className="w-20 h-full border border-l rounded-r outline-none cursor-pointer" onClick={handleCountPosetive}>
                                                             <span className="m-auto text-2xl font-thin">+</span>
                                                         </button>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
-                                            <button className="btn w-52 bg-red-500 hover:bg-red-600 text-white">Order</button>
+                                           <Link className="w-full" to={`/food/order/${prodct._id}`}> <button className="btn w-full bg-red-500 hover:bg-red-600 text-white">Order</button></Link>
                                         </div>
                                     </div>
                                 </div>

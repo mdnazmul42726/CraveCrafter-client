@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 const TopPrdctDtls = () => {
@@ -69,19 +69,9 @@ const TopPrdctDtls = () => {
                                     <div className="mb-6 "></div>
                                     <div className="flex flex-wrap items-center mb-6">
                                         <div className="mb-4 mr-4 lg:mb-0">
-                                            <div className="w-28">
-                                                <div className="relative flex flex-row w-full h-10 bg-transparent rounded-lg">
-                                                    <button className="w-20 h-full border border-l rounded-l outline-none cursor-pointer">
-                                                        <span className="m-auto text-2xl font-thin">-</span>
-                                                    </button>
-                                                    <p className="flex items-center w-full font-semibold text-center border outline-none focus:outline-none text-md hover:text-black" placeholder="1" > &nbsp; &nbsp; 11</p>
-                                                    <button className="w-20 h-full border border-l rounded-r outline-none cursor-pointer">
-                                                        <span className="m-auto text-2xl font-thin">+</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+
                                         </div>
-                                        <button className="btn w-52 bg-red-500 hover:bg-red-600 text-white">Order</button>
+                                        <Link to={`/top-food/order/${topFoodData._id}`}><button className="btn bg-red-500 w-full hover:bg-red-600 text-white">Order</button></Link>
                                     </div>
                                 </div>
                             </div>

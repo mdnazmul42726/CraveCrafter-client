@@ -11,17 +11,30 @@ import TopPrdctDtls from "./pages/TopPrdctDtls";
 import ErrorPage from "./pages/ErrorPage";
 import Foods from "./pages/Foods";
 import ProdctDtls from "./pages/ProdctDtls";
+import Order from "./pages/Order";
+import PrivateRoute from "./PrivateRoute";
+import OrderTop from "./pages/OrderTop";
 
 const router = createBrowserRouter([
   {
     path: "/", element: <Root />, errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home />, loader: () => fetch('http://localhost:5000/foods/top/v1') },
+
       { path: "/login", element: <Login /> },
+
       { path: "/register", element: <Register /> },
+
       { path: "/top-food/:id", element: <TopPrdctDtls />, loader: ({ params }) => fetch(`http://localhost:5000/top-food/v1/${params.id}`) },
+
       { path: "/foods", element: <Foods />, loader: () => fetch('http://localhost:5000/foods/v1') },
-      {path: "/food/:id", element: <ProdctDtls/>, loader: ({params})=> fetch(`http://localhost:5000/food/v1/${params.id}`)}
+
+      { path: "/food/:id", element: <ProdctDtls />, loader: ({ params }) => fetch(`http://localhost:5000/food/v1/${params.id}`) },
+
+      { path: "/food/order/:id", element: <PrivateRoute><Order /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/food/v1/${params.id}`) },
+
+      { path: "/top-food/order/:id", element: <PrivateRoute><OrderTop /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/top-food/v1/${params.id}`) },
+
     ]
   },
 ]);

@@ -157,7 +157,7 @@ const Home = () => {
                         <div className="p-4">
                             <h2 className="mb-2 text-lg font-medium">{product.food_name}</h2>
                             <p className="text-base"><span className='font-semibold'>Category: </span>{product.food_category}</p>
-                            <p className=" text-base"><span className='font-semibold'>Orders: </span>{product.order}</p>
+                            {/* <p className=" text-base"><span className='font-semibold'>Orders: </span>{product.order}</p> */}
                             <div className="flex items-center">
                                 <p className="mr-2 text-2xl font-semibold">${product.price}</p>
                                 <Link className='ml-auto text-base font-medium bg-red-500 hover:bg-red-600 px-4 rounded-sm text-white py-2' to={`/top-food/${product._id}`}><button>Details</button></Link>
@@ -166,7 +166,7 @@ const Home = () => {
                     </div>)}
                 </div>
                 <div className="flex justify-center mb-10 mt-20">
-                    <button className=' text-base font-medium bg-red-500 hover:bg-red-600 px-4 rounded-sm text-white py-2'>See All</button>
+                  <Link to={"/foods"}><button className=' text-base font-medium bg-red-500 hover:bg-red-600 px-4 rounded-sm text-white py-2'>See All</button></Link>
                 </div>
             </div>
             {/* meet the tram */}
