@@ -58,7 +58,7 @@ const Root = () => {
                     <p className="opacity-75">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <form>
                         <input className='p-2 w-full border rounded-sm my-3' type="email" name="" id="" placeholder='Email Address' required />
-                        <button type='submit' className="btn mt-5 ml-3 bg-[#F34949] px-7 hover:bg-[#F34949] w-full text-white rounded-full">Book A Table</button>
+                        <button type='submit' className="btn mt-5 ml-3 bg-[#F34949] px-7 hover:bg-[#F34949] w-full text-white rounded-full">Subscribe</button>
                     </form>
                 </div>
             </div>
