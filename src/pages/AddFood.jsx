@@ -48,7 +48,9 @@ function AddFood() {
                     title: 'Food added successfully',
                     text: 'Now your added food can be seen on all food page',
                     icon: 'success'
-                })
+                });
+                
+                form.reset();
             }
         }).catch(err => console.log(err));
     }

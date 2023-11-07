@@ -1,8 +1,55 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import axios from "axios";
+import { useState } from "react";
+import noImg from '../assets/chef-cooking.gif';
 
 const Foods = () => {
-    const foods = useLoaderData();
+    const loadedFoods = useLoaderData();
+    const [foods, setFoods] = useState(loadedFoods);
+
+    const handleSearch = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const title = form.title.value;
+        console.log(title);
+        const fetchUrl = `http://localhost:5000/search/v1?title=${title}`;
+        axios.get(fetchUrl).then(res => setFoods(res.data)).catch(err => console.log(err));
+    };
+
+    if (foods.length < 1) {
+        return (
+       <div className="bg-[#FCFEFC]">
+               <div className="relative overflow-hidden mb-20 bg-[url('https://i.ibb.co/qk5FpNF/pexels-valeria-boltneva-1639563-1.jpg')] bg-center bg-cover">
+                <Navbar />
+                <div className="relative flex items-center justify-center w-full text-center ">
+                    <div className="mx-4">
+                        <div className="z-10 max-w-3xl p-6  md:p-16 opacity-80">
+                            <div className="text-center">
+                                <h2 className="mb-6 text-4xl font-medium leading-10 tracking-tight text-gray-50 md:text-5xl">
+                                    Food is not just eating energy. It's an experience!
+                                </h2>
+                                <p className="mb-6 tracking-wide text-gray-300 sm:mt-5 sm:text-md sm:max-w-xl sm:mx-auto md:mt-5">
+                                    Cooking is all about people. Food is maybe the only universal thing that really has the power to bring everyone together. No matter what culture, everywhere around the world, people get together to eat. - Guy Fieri
+                                </p>
+                                <form className="flex flex-wrap justify-center" onSubmit={handleSearch}>
+                                    <input className="w-full py-3 pl-4 mb-2 text-sm md:mb-0 md:w-1/2" name="title" type="text" placeholder="Food Name" />
+                                    <button className="w-full px-6 py-3 text-sm font-semibold text-white bg-red-500 rounded md:w-auto md:ml-2 hover:bg-red-600">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div className="md:min-h-screen mb-10 md:mb-0">
+           <div className="flex justify-center">
+                <img src={noImg} className="w-[16%]" alt="" />
+            </div>
+            <h1 className="text-3xl text-center text-red-600 mr-4">No Food Found!</h1>
+           </div>
+       </div>
+        );
+    }
 
     return (
         <div className="">
@@ -18,8 +65,8 @@ const Foods = () => {
                                 <p className="mb-6 tracking-wide text-gray-300 sm:mt-5 sm:text-md sm:max-w-xl sm:mx-auto md:mt-5">
                                     Cooking is all about people. Food is maybe the only universal thing that really has the power to bring everyone together. No matter what culture, everywhere around the world, people get together to eat. - Guy Fieri
                                 </p>
-                                <form className="flex flex-wrap justify-center">
-                                    <input className="w-full py-3 pl-4 mb-2 text-sm md:mb-0 md:w-1/2" type="text" placeholder="Food Name" />
+                                <form className="flex flex-wrap justify-center" onSubmit={handleSearch}>
+                                    <input className="w-full py-3 pl-4 mb-2 text-sm md:mb-0 md:w-1/2" name="title" type="text" placeholder="Food Name" />
                                     <button className="w-full px-6 py-3 text-sm font-semibold text-white bg-red-500 rounded md:w-auto md:ml-2 hover:bg-red-600">Search</button>
                                 </form>
                             </div>

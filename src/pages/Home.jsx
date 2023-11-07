@@ -12,6 +12,8 @@ const Home = () => {
     const topProducts = useLoaderData();
     console.log(topProducts);
 
+  
+
 
     return (
         <div className="mb-36">
@@ -166,7 +168,7 @@ const Home = () => {
                     </div>)}
                 </div>
                 <div className="flex justify-center mb-10 mt-20">
-                  <Link to={"/foods"}><button className=' text-base font-medium bg-red-500 hover:bg-red-600 px-4 rounded-sm text-white py-2'>See All</button></Link>
+                    <Link to={"/foods"}><button className=' text-base font-medium bg-red-500 hover:bg-red-600 px-4 rounded-sm text-white py-2'>See All</button></Link>
                 </div>
             </div>
             {/* meet the tram */}
