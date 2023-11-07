@@ -19,6 +19,7 @@ import BlogPost from "./pages/BlogDtls";
 import AddFood from "./pages/AddFood";
 import Cart from "./pages/Cart";
 import Added from "./pages/Added";
+import Update from "./pages/Update";
 const router = createBrowserRouter([
   {
     path: "/", element: <Root />, errorElement: <ErrorPage />,
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
 
       { path: "/my-ordered-food", element: <PrivateRoute><Cart /></PrivateRoute> },
 
-      { path: "/my-added-food", element: <PrivateRoute><Added /></PrivateRoute> }
+      { path: "/my-added-food", element: <PrivateRoute><Added /></PrivateRoute> },
+
+      { path: "/food/update/:id", element: <PrivateRoute> <Update /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/food/v1/${params.id}`) },
 
     ]
   },

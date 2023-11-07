@@ -163,7 +163,7 @@ const Added = () => {
                                                 <p className="text-lg font-bold text-blue-500">{food.food_category}</p>
                                             </div>
                                             <div className="w-auto px-4 text-right md:w-1/6 lg:w-2/12">
-                                            <button onClick={() => handleUpdate(food._id)}><AiFillEdit title='Edit' className='text-2xl ml-7 text-red-500 hover:text-red-600' /></button>
+                                                <Link to={`/food/update/${food._id}`}> <button onClick={() => handleUpdate(food._id)}><AiFillEdit title='Edit' className='text-2xl ml-7 text-red-500 hover:text-red-600' /></button></Link>
                                             </div>
                                         </div>
                                     </div>)}

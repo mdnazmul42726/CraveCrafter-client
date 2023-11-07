@@ -48,7 +48,7 @@ const Order = () => {
         const date = form.date.value;
         const isDelivered = false
 
-        const orderData = { buyerName, buyerEmail, foodName, foodPrice, isDelivered, date, itemQuntity, foodImg}
+        const orderData = { buyerName, buyerEmail, foodName, foodPrice, isDelivered, date, itemQuntity, foodImg }
 
         if (selectedFood.addedBy == user.displayName) {
             Swal.fire({
@@ -74,7 +74,9 @@ const Order = () => {
 
                     const newCuantity = { quantity: selectedFood.quantity - quantity };
 
-                    axios.patch(`http://localhost:5000/quantity/v1/${selectedFood._id}`, newCuantity).then(res => console.log(res.data)).catch(err => console.log(err));
+                    axios.patch(`http://localhost:5000/quantity/v1/${selectedFood._id}`, newCuantity).then(res => {
+                        
+                    }).catch(err => console.log(err));
                 }
             }).catch(err => console.log(err))
         }
