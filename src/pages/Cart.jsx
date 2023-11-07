@@ -40,7 +40,7 @@ function Cart() {
     };
 
     useEffect(() => {
-        axios.get(fetchURL).then(res => setOrders(res.data)).catch(err => console.log(err))
+        axios.get(fetchURL, { withCredentials: true }).then(res => setOrders(res.data)).catch(err => console.log(err))
     }, [fetchURL])
 
     if (orders.length < 1) {

@@ -146,8 +146,8 @@ const OrderTop = () => {
                                         </div>
                                     </div>
 
-                                    <div className="px-4">
-                                        <div className="flex ">
+                                    <div className="px-4 w-full">
+                                        <div className="flex w-full">
                                             <button type="submit"
                                                 className="inline-block px-6 w-full py-2.5 bg-red-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-600 hover:shadow-lg ">Order</button>
                                         </div>

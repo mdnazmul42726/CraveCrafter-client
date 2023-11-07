@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../assets/1547c11ae29089c573614ed932e8cf4a.jpg'
 import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
@@ -9,8 +9,9 @@ import { updateProfile } from 'firebase/auth';
 import { auth } from '../firebase.init';
 
 const Register = () => {
-    const { registerUserWithEmailAndPassword, user , popupSignInWithGithub, popupSignInWithGoogle} = useContext(AuthContext);
+    const { registerUserWithEmailAndPassword, user, popupSignInWithGithub, popupSignInWithGoogle } = useContext(AuthContext);
     console.log(user);
+    const navigate = useNavigate();
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -18,14 +19,15 @@ const Register = () => {
 
         const form = event.target;
         const name = form.name.value;
+        const pImg = form.pImg.value;
         const email = form.email.value;
         const password = form.password.value;
 
         registerUserWithEmailAndPassword(email, password).then(result => {
-            console.log(result.user)
+            updateProfile(auth.currentUser, { displayName: name, photoURL: pImg });
 
-            updateProfile(auth.currentUser, { displayName: name })
             toast.success('Account created.', { id: toastId })
+            navigate('/')
         }).catch(err => {
             console.log(err);
             toast.error(err.code, { id: toastId });
@@ -34,7 +36,8 @@ const Register = () => {
 
     const handleSocialLogin = (media) => {
         media().then(result => {
-            console.log(result.user);
+
+            navigate('/');
         }).catch(err => console.log(err))
     }
 
@@ -57,6 +60,12 @@ const Register = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
+                                    <span className="label-text">Image URL</span>
+                                </label>
+                                <input type="name" name='pImg' placeholder=" Ex: IMGBB Direct Link" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" name='email' placeholder="Email" className="input input-bordered" required />
@@ -74,8 +83,8 @@ const Register = () => {
                         <h3 className='text-center'>Or Sign Up with</h3>
                         <div className="flex justify-center gap-3 text-xl mt-3 mb-4">
                             {/* <FaFacebook className='text-sky-700 cursor-pointer' /> */}
-                            <FaGithub className='text-sky-800 cursor-pointer' onClick={ ()=> handleSocialLogin(popupSignInWithGithub)} />
-                            <FaGoogle className='text-red-600 cursor-pointer' onClick={()=> handleSocialLogin(popupSignInWithGoogle)} />
+                            <FaGithub className='text-sky-800 cursor-pointer' onClick={() => handleSocialLogin(popupSignInWithGithub)} />
+                            <FaGoogle className='text-red-600 cursor-pointer' onClick={() => handleSocialLogin(popupSignInWithGoogle)} />
                         </div>
                         <p className='mb-5 text-center'>Already have an account? <Link className='text-red-500 font-bold' to={"/login"}>Login</Link></p>
                     </div>

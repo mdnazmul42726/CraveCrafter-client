@@ -68,7 +68,7 @@ const Blog = () => {
             {/*  */}
             <div className="mt-20">
                 <div className=" text-center md:text-left md:ml-[70px] mb-5">
-                    <h2 className='text-xl font-mono '>Hi, <span className='text-red-600'>{user.displayName}</span> </h2>
+                    <h2 className='text-xl font-mono '>Hi, <span className='text-red-600'>{user?.displayName}</span> </h2>
                     <p className='font-mono'>Read our popular blogs!</p>
                 </div>
             </div>

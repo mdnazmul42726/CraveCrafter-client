@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import axios from "axios";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -19,12 +20,16 @@ const Navbar = () => {
             confirmButtonText: 'Yes, Sign Out!'
         }).then((result) => {
             if (result.isConfirmed) {
-                logOut();
-                Swal.fire(
-                    'Good Luck!',
-                    'Logout Successful.',
-                    'success'
-                )
+                logOut().then(result => {
+                    Swal.fire(
+                        'Good Luck!',
+                        'Logout Successful.',
+                        'success'
+                    );
+
+                    axios.get('http://localhost:5000/jwt/logout').then(res => console.log(res.data)).catch(err => console.log(err))
+                }).catch(err => console.log(err))
+
             }
         })
     }
@@ -71,9 +76,9 @@ const Navbar = () => {
                                         </a>
                                     </li>
                                     <div className="ml-4">
-                                    <NavLink to={'/add-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>Add Food</a></li></NavLink>
-                                    <NavLink to={'/my-added-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Added Foods</a></li></NavLink>
-                                    <NavLink to={'/my-ordered-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Ordered Foods</a></li></NavLink>
+                                        <NavLink to={'/add-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>Add Food</a></li></NavLink>
+                                        <NavLink to={'/my-added-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Added Foods</a></li></NavLink>
+                                        <NavLink to={'/my-ordered-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Ordered Foods</a></li></NavLink>
                                     </div>
 
                                     <li><a onClick={handleLogout} className="text-red-600 font-bold ml-4">Logout</a></li>
