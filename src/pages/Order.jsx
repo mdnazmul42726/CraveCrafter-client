@@ -42,13 +42,13 @@ const Order = () => {
         const buyerName = user.displayName;
         const buyerEmail = user.email
         const foodName = selectedFood.food_name;
+        const foodImg = selectedFood.food_img_url;
         const foodPrice = price
         const itemQuntity = quantity
         const date = form.date.value;
         const isDelivered = false
 
-        const orderData = { buyerName, buyerEmail, foodName, foodPrice, isDelivered, date, itemQuntity }
-        console.log(orderData);
+        const orderData = { buyerName, buyerEmail, foodName, foodPrice, isDelivered, date, itemQuntity, foodImg}
 
         if (selectedFood.addedBy == user.displayName) {
             Swal.fire({

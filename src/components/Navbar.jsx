@@ -57,7 +57,7 @@ const Navbar = () => {
                     <div className="ml-3">
                         {user ? <div className="flex items-center gap-2">
                             {/* <NavLink to={"/cart"} className={({ isActive }) => isActive ? 'text-sky-600' : 'text-red-600'}> <AiOutlineShoppingCart title="Cart" className="text-2xl" /></NavLink> */}
-                            <div className="dropdown dropdown-end">
+                            <div className="dropdown dropdown-end z-50">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
                                         <img src={user.photoURL} />
@@ -72,8 +72,8 @@ const Navbar = () => {
                                     </li>
                                     <div className="ml-4">
                                     <NavLink to={'/add-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>Add Food</a></li></NavLink>
-                                    <NavLink to={'/my-added-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Added Food</a></li></NavLink>
-                                    <NavLink to={'/my-ordered-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Ordered Food</a></li></NavLink>
+                                    <NavLink to={'/my-added-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Added Foods</a></li></NavLink>
+                                    <NavLink to={'/my-ordered-food'} className={({ isActive }) => isActive ? 'text-sky-500 ' : 'text-black'}><li><a>My Ordered Foods</a></li></NavLink>
                                     </div>
 
                                     <li><a onClick={handleLogout} className="text-red-600 font-bold ml-4">Logout</a></li>
