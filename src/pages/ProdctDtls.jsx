@@ -1,30 +1,13 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const ProdctDtls = () => {
-    const prodct = useLoaderData();
-    const [count, setCount] = useState(1);
-    const product = prodct.quantity
-
-    const handleCountNagetive = () => {
-        if (count > 1) {
-            setCount(count - 1)
-        }
-    };
-
-    // const handleCountPosetive = () => {
-    //     if (count < prodct.quantity) {
-    //         setCount(count + 1)
-    //     } else {
-    //         Swal.fire('Out of stock!')
-    //     }
-    // }
+    const product = useLoaderData();
 
     useEffect(() => {
-        document.title = `${prodct.food_name}`
-    }, [prodct]);
+        document.title = `${product.food_name}`
+    }, [product]);
 
     return (
         <div>
@@ -37,14 +20,14 @@ const ProdctDtls = () => {
                                 <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0">
                                     <div className="sticky top-0 overflow-hidden ">
                                         <div className="relative mb-6 lg:mb-10 lg:h-[600px]">
-                                            <img className="object-contain w-full lg:h-full" src={prodct.food_img_url} alt="" />
+                                            <img className="object-contain w-full lg:h-full" src={product.food_img_url} alt="" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="w-full px-4 md:w-1/2">
                                     <div className="lg:pl-20">
                                         <div className="mb-6 ">
-                                            <h2 className="max-w-xl mt-6 mb-6 text-xl font-semibold leading-loose tracking-wide  md:text-2xl">{prodct.food_name}</h2>
+                                            <h2 className="max-w-xl mt-6 mb-6 text-xl font-semibold leading-loose tracking-wide  md:text-2xl">{product.food_name}</h2>
                                             <div className="flex flex-wrap items-center mb-6">
                                                 <ul className="flex mb-4 mr-2 lg:mb-0">
                                                     <li>
@@ -77,17 +60,17 @@ const ProdctDtls = () => {
                                                 </a>
                                             </div>
                                             <p className="inline-block text-2xl font-semibold ">
-                                                <span>$ {prodct.price}</span>
+                                                <span>$ {product.price}</span>
                                                 <span className="ml-3 text-base font-normal text-gray-500 line-through dark:text-gray-400">$.76.00</span>
                                             </p>
                                         </div>
                                         <div className="py-6 mb-6 border-t border-b border-gray-200 dark:border-gray-700">
                                             <span className="text-base text-gray-600 dark:text-gray-400">In Stock: Yes</span> <br />
-                                            <span className="text-base text-gray-600 dark:text-gray-400">Category: {prodct.food_category}</span> <br />
-                                            <span className="text-base text-gray-600 dark:text-gray-400">Quantity: {prodct.quantity}</span> <br />
-                                            <span className="text-base text-gray-600 dark:text-gray-400">Added By: {prodct.addedBy}</span> <br />
-                                            <span className="text-base text-gray-600 dark:text-gray-400">Origin: {prodct.origin}</span> <br />
-                                            <span className="text-base text-gray-600 dark:text-gray-400">Description: {prodct.description}</span> <br />
+                                            <span className="text-base text-gray-600 dark:text-gray-400">Category: {product.food_category}</span> <br />
+                                            <span className="text-base text-gray-600 dark:text-gray-400">Quantity: {product.quantity}</span> <br />
+                                            <span className="text-base text-gray-600 dark:text-gray-400">Added By: {product.addedBy}</span> <br />
+                                            <span className="text-base text-gray-600 dark:text-gray-400">Origin: {product.origin}</span> <br />
+                                            <span className="text-base text-gray-600 dark:text-gray-400">Description: {product.description}</span> <br />
                                         </div>
                                         <div className="mb-6 "></div>
                                         <div className="flex flex-wrap items-center mb-6">
@@ -104,7 +87,7 @@ const ProdctDtls = () => {
                                                     </div> */}
                                                 </div>
                                             </div>
-                                            <Link className="w-full" to={`/food/order/${prodct._id}`}> <button className="btn w-full bg-red-500 hover:bg-red-600 text-white">Order</button></Link>
+                                            <Link className="w-full" to={`/food/order/${product._id}`}> <button className="btn w-full bg-red-500 hover:bg-red-600 text-white">Order</button></Link>
                                         </div>
                                     </div>
                                 </div>

@@ -36,7 +36,7 @@ const Added = () => {
                                         Eat good food and stay healthy.
                                     </h2>
                                     <p className="mb-6 tracking-wide text-gray-300 sm:mt-5 sm:text-md sm:max-w-xl sm:mx-auto md:mt-5">
-                                        "Food is not just nourishment for the body; it's nourishment for the soul."
+                                        Food is not just nourishment for the body; it`s nourishment for the soul.
                                     </p>
                                     <div className="justify-center sm:flex">
                                         <div className="">
@@ -63,7 +63,7 @@ const Added = () => {
                         <div className="hidden md:flex justify-center mt-20">
                             <img className='w-[20%] mr-4' src={chefImg} alt="" />
                         </div>
-                        <p className='text-center text-3xl mt-20 md:mt-3 font-mono'>You haven't added any food yet</p>
+                        <p className='text-center text-3xl mt-20 md:mt-3 font-mono'>You haven`t added any food yet</p>
                         <div className="flex justify-center">
                             <Link to={"/add-food"} className='bg-red-500 hover:bg-red-600 px-3 py-2 mt-7 text-white font-semibold'> Add Now</Link>
                         </div>
@@ -86,7 +86,7 @@ const Added = () => {
                                     Eat good food and stay healthy.
                                 </h2>
                                 <p className="mb-6 tracking-wide text-gray-300 sm:mt-5 sm:text-md sm:max-w-xl sm:mx-auto md:mt-5">
-                                    "Food is not just nourishment for the body; it's nourishment for the soul."
+                                    Food is not just nourishment for the body; it`s nourishment for the soul.
                                 </p>
                                 <div className="justify-center sm:flex">
                                     <div className="">
@@ -113,7 +113,7 @@ const Added = () => {
                     <div className=" py-6 mx-auto max-w-7xl lg:py-4 md:px-6">
                         <div>
                             {/* <h2 className="mb-8 text-4xl font-bold ml-3 md:ml-0">Your Cart</h2> */}
-                            <h2 className="mb-8 text-3xl font-mono ml-3 md:ml-0"><span className='text-red-600'>{user.displayName}'s </span>Foods</h2>
+                            <h2 className="mb-8 text-3xl font-mono ml-3 md:ml-0"><span className='text-red-600'>{user.displayName}`s </span>Foods</h2>
                             <div className="md:flex">
                                 <div className="px-20 mb-8 border w-full">
                                     <div className=" items-center hidden mb-6 -mx-4 md:flex md:mb-8">

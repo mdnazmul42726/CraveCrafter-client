@@ -90,7 +90,7 @@ const Home = () => {
                     <div className="md:w-1/2 overflow-hidden" data-aos="fade-left">
                         <p className='text-red-500'>About</p>
                         <h1 className='text-3xl font-bold '>Welcome to Crave<span className='text-red-500 font-serif'>Crafter.</span></h1>
-                        <p className='mt-10'>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        <p className='mt-10'>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word and and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                         <p className='text-2xl font-mono mt-10 mb-4'>Special Recipe</p>
                         <div className="flex gap-5">
                             <div className=" cursor-pointer hover:scale-105 transition-all">

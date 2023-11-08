@@ -1,19 +1,19 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../assets/050270aa95e1685d73bfc48562c784b5.jpg'
-import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import { useContext, useEffect } from 'react';
 import { AuthContext } from '../AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-    const { logInWithEmailAndPassword, popupSignInWithGithub, popupSignInWithGoogle, isLoading, user } = useContext(AuthContext);
+    const { logInWithEmailAndPassword, popupSignInWithGithub, popupSignInWithGoogle } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
-    const handleSignIn = (evant) => {
-        evant.preventDefault();
-        const form = evant.target;
+    const handleSignIn = (event) => {
+        event.preventDefault();
+        const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -75,7 +75,7 @@ const Login = () => {
                             <FaGithub className='text-sky-800 cursor-pointer' onClick={() => handleSocialLogin(popupSignInWithGithub)} />
                             <FaGoogle className='text-red-600 cursor-pointer' onClick={() => handleSocialLogin(popupSignInWithGoogle)} />
                         </div>
-                        <p className='mb-5 text-center'>Don't have an account? <Link className='text-red-500 font-bold' to={"/register"}>Register</Link></p>
+                        <p className='mb-5 text-center'>Don`t have an account? <Link className='text-red-500 font-bold' to={"/register"}>Register</Link></p>
                     </div>
                 </div>
             </div>

@@ -34,7 +34,7 @@ const Blog = () => {
                                 </div>
                             </div>
                             <p className="mb-4 text-base text-gray-500 lg:mb-16">
-                                "Reading is a journey through time and imagination. It's a window to worlds unknown, a source of knowledge, and a lifelong friend."
+                                Reading is a journey through time and imagination. It`s a window to worlds unknown, a source of knowledge, and a lifelong friend.
                             </p>
                         </div>
 
@@ -109,7 +109,7 @@ const Blog = () => {
                                 More Details
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
                                     className="ml-1" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
+                                    <path
                                         d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
                                     </path>
                                 </svg>

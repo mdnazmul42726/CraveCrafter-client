@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -60,7 +60,7 @@ const Foods = () => {
                             <div className="z-10 max-w-3xl p-6  md:p-16 opacity-80">
                                 <div className="text-center">
                                     <h2 className="mb-6 text-4xl font-medium leading-10 tracking-tight text-gray-50 md:text-5xl overflow-hidden" data-aos="zoom-out">
-                                        Food is not just eating energy. It's an experience!
+                                        Food is not just eating energy. It`s an experience!
                                     </h2>
                                     <p className="mb-6 tracking-wide text-gray-300 sm:mt-5 sm:text-md sm:max-w-xl sm:mx-auto md:mt-5">
                                         Cooking is all about people. Food is maybe the only universal thing that really has the power to bring everyone together. No matter what culture, everywhere around the world, people get together to eat. - Guy Fieri
@@ -93,7 +93,7 @@ const Foods = () => {
                         <div className="z-10 max-w-3xl p-6  md:p-16 opacity-80">
                             <div className="text-center">
                                 <h2 className="mb-6 text-4xl font-medium leading-10 tracking-tight text-gray-50 md:text-5xl">
-                                    Food is not just eating energy. It's an experience!
+                                    Food is not just eating energy. It`s an experience!
                                 </h2>
                                 <p className="mb-6 tracking-wide text-gray-300 sm:mt-5 sm:text-md sm:max-w-xl sm:mx-auto md:mt-5">
                                     Cooking is all about people. Food is maybe the only universal thing that really has the power to bring everyone together. No matter what culture, everywhere around the world, people get together to eat. - Guy Fieri

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import img from '../assets/rijKyMB7T.gif';
 import Navbar from '../components/Navbar';
 import { AuthContext } from '../AuthProvider';
