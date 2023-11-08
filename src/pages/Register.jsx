@@ -29,7 +29,7 @@ const Register = () => {
             updateProfile(auth.currentUser, { displayName: name, photoURL: pImg });
 
             toast.success('Account created.', { id: toastId });
-            axios.post('http://localhost:5000/user/v1', user).then(() => navigate('/')).catch(err => console.log(err));
+            axios.post('https://crave-crafter-server.vercel.app/user/v1', user).then(() => navigate('/')).catch(err => console.log(err));
 
         }).catch(err => {
             console.log(err);
@@ -40,7 +40,7 @@ const Register = () => {
     const handleSocialLogin = (media) => {
         media().then(result => {
             const googleUser = { name: result.user.displayName, email: result.user.email, }
-            axios.post('http://localhost:5000/user/v1', googleUser).then(() => navigate('/')).catch(err => console.log(err));
+            axios.post('https://crave-crafter-server.vercel.app/user/v1', googleUser).then(() => navigate('/')).catch(err => console.log(err));
         }).catch(err => console.log(err))
     }
 

@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (currentUser) {
                 const loggedInUser = { email: currentUser.email };
-                axios.post('http://localhost:5000/jwt', loggedInUser, { withCredentials: true }).then(res => {
+                axios.post('https://crave-crafter-server.vercel.app/jwt', loggedInUser, { withCredentials: true }).then(res => {
                     console.log(res.data);
                 }).catch(err => console.log(err));
             }

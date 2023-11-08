@@ -41,12 +41,12 @@ const Foods = () => {
         const form = event.target;
         const title = form.title.value;
         console.log(title);
-        const fetchUrl = `http://localhost:5000/search/v1?title=${title}`;
+        const fetchUrl = `https://crave-crafter-server.vercel.app/search/v1?title=${title}`;
         axios.get(fetchUrl, { withCredentials: true }).then(res => setFoods(res.data)).catch(err => console.log(err));
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/foods/v1?page=${currentPage}&size=${itemParPage}`).then(res => setFoods(res.data)).catch(err => console.log(err));
+        axios.get(`https://crave-crafter-server.vercel.app/foods/v1?page=${currentPage}&size=${itemParPage}`).then(res => setFoods(res.data)).catch(err => console.log(err));
         document.title = 'All Foods'
     }, [currentPage, itemParPage]);
 

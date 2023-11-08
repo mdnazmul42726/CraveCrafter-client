@@ -42,7 +42,7 @@ function AddFood() {
             return
         }
 
-        axios.post('http://localhost:5000/add-food', newFood).then(res => {
+        axios.post('https://crave-crafter-server.vercel.app/add-food', newFood).then(res => {
             if (res.data.insertedId) {
                 Swal.fire({
                     title: 'Food added successfully',

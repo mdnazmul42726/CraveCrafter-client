@@ -10,7 +10,7 @@ import { AuthContext } from '../AuthProvider';
 function Cart() {
     const [orders, setOrders] = useState([]);
     const { user } = useContext(AuthContext);
-    const fetchURL = `http://localhost:5000/orders/v2?email=${user.email}`
+    const fetchURL = `https://crave-crafter-server.vercel.app/orders/v2?email=${user.email}`
 
     const handleDeleteIem = (_id) => {
         Swal.fire({
@@ -23,7 +23,7 @@ function Cart() {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/orders/delete/v1/${_id}`).then(res => {
+                axios.delete(`https://crave-crafter-server.vercel.app/orders/delete/v1/${_id}`).then(res => {
 
                     if (res.data.deletedCount) {
                         Swal.fire({

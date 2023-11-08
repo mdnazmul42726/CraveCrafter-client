@@ -41,7 +41,7 @@ function Update() {
             return
         }
 
-        axios.patch(`http://localhost:5000/food/update/${loadedFood._id}`, updatedFood).then(res => {
+        axios.patch(`https://crave-crafter-server.vercel.app/food/update/${loadedFood._id}`, updatedFood).then(res => {
             console.log(res.data);
             if (res.data.modifiedCount > 0) {
                 Swal.fire({

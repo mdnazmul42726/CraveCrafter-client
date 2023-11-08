@@ -56,7 +56,7 @@ const OrderTop = () => {
             });
 
         } else {
-            axios.post('http://localhost:5000/food/order/v1', orderData).then(res => {
+            axios.post('https://crave-crafter-server.vercel.app/food/order/v1', orderData).then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({
                         title: 'Order placed',

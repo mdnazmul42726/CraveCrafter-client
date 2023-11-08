@@ -24,24 +24,24 @@ const router = createBrowserRouter([
   {
     path: "/", element: <Root />, errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home />, loader: () => fetch('http://localhost:5000/foods/top/v1') },
+      { index: true, element: <Home />, loader: () => fetch('https://crave-crafter-server.vercel.app/foods/top/v1') },
 
       { path: "/login", element: <Login /> },
 
       { path: "/register", element: <Register /> },
 
-      { path: "/top-food/:id", element: <TopPrdctDtls />, loader: ({ params }) => fetch(`http://localhost:5000/top-food/v1/${params.id}`) },
+      { path: "/top-food/:id", element: <TopPrdctDtls />, loader: ({ params }) => fetch(`https://crave-crafter-server.vercel.app/top-food/v1/${params.id}`) },
 
       { path: "/foods", element: <Foods />},
 
-      { path: "/food/:id", element: <ProdctDtls />, loader: ({ params }) => fetch(`http://localhost:5000/food/v1/${params.id}`) },
+      { path: "/food/:id", element: <ProdctDtls />, loader: ({ params }) => fetch(`https://crave-crafter-server.vercel.app/food/v1/${params.id}`) },
 
-      { path: "/food/order/:id", element: <PrivateRoute><Order /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/food/v1/${params.id}`) },
+      { path: "/food/order/:id", element: <PrivateRoute><Order /></PrivateRoute>, loader: ({ params }) => fetch(`https://crave-crafter-server.vercel.app/food/v1/${params.id}`) },
 
-      { path: "/top-food/order/:id", element: <PrivateRoute><OrderTop /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/top-food/v1/${params.id}`) },
+      { path: "/top-food/order/:id", element: <PrivateRoute><OrderTop /></PrivateRoute>, loader: ({ params }) => fetch(`https://crave-crafter-server.vercel.app/top-food/v1/${params.id}`) },
 
-      { path: "/blogs", element: <Blog />, loader: () => fetch('http://localhost:5000/blogs/v1') },
-      { path: "/blog/:id", element: <BlogPost />, loader: ({ params }) => fetch(`http://localhost:5000/blog/v1/${params.id}`) },
+      { path: "/blogs", element: <Blog />, loader: () => fetch('https://crave-crafter-server.vercel.app/blogs/v1') },
+      { path: "/blog/:id", element: <BlogPost />, loader: ({ params }) => fetch(`https://crave-crafter-server.vercel.app/blog/v1/${params.id}`) },
 
       { path: "/add-food", element: <PrivateRoute><AddFood /></PrivateRoute> },
 
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
 
       { path: "/my-added-food", element: <PrivateRoute><Added /></PrivateRoute> },
 
-      { path: "/food/update/:id", element: <PrivateRoute> <Update /></PrivateRoute>, loader: ({ params }) => fetch(`http://localhost:5000/food/v1/${params.id}`) },
+      { path: "/food/update/:id", element: <PrivateRoute> <Update /></PrivateRoute>, loader: ({ params }) => fetch(`https://crave-crafter-server.vercel.app/food/v1/${params.id}`) },
 
     ]
   },

@@ -64,7 +64,7 @@ const Order = () => {
             });
 
         } else {
-            axios.post('http://localhost:5000/food/order/v1', orderData).then(res => {
+            axios.post('https://crave-crafter-server.vercel.app/food/order/v1', orderData).then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({
                         title: 'Order placed',
@@ -74,7 +74,7 @@ const Order = () => {
 
                     const newCuantity = { quantity: selectedFood.quantity - quantity };
 
-                    axios.patch(`http://localhost:5000/quantity/v1/${selectedFood._id}`, newCuantity).then(() => {
+                    axios.patch(`https://crave-crafter-server.vercel.app/quantity/v1/${selectedFood._id}`, newCuantity).then(() => {
 
                     }).catch(err => console.log(err));
                 }

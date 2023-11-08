@@ -8,7 +8,7 @@ import chefImg from '../assets/chef-animation.gif';
 
 const Added = () => {
     const { user } = useContext(AuthContext);
-    const fetchUrl = `http://localhost:5000/foods/added/v1?email=${user.email}`;
+    const fetchUrl = `https://crave-crafter-server.vercel.app/foods/added/v1?email=${user.email}`;
     const [addedFood, setAddedFood] = useState([]);
     console.log(addedFood);
 
