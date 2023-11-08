@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const ProdctDtls = () => {
@@ -22,11 +22,15 @@ const ProdctDtls = () => {
     //     }
     // }
 
+    useEffect(() => {
+        document.title = `${prodct.food_name}`
+    }, [prodct]);
+
     return (
         <div>
             <div>
                 <Navbar />
-                <div className="min-h-screen" data-aos="fade-left">
+                <div className="min-h-screen overflow-hidden" data-aos="fade-left">
                     <section className="py-12 font-poppins">
                         <div className="max-w-6xl px-4 mx-auto">
                             <div className="flex flex-wrap mb-24 -mx-4">
@@ -100,7 +104,7 @@ const ProdctDtls = () => {
                                                     </div> */}
                                                 </div>
                                             </div>
-                                           <Link className="w-full" to={`/food/order/${prodct._id}`}> <button className="btn w-full bg-red-500 hover:bg-red-600 text-white">Order</button></Link>
+                                            <Link className="w-full" to={`/food/order/${prodct._id}`}> <button className="btn w-full bg-red-500 hover:bg-red-600 text-white">Order</button></Link>
                                         </div>
                                     </div>
                                 </div>

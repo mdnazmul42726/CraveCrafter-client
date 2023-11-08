@@ -1,14 +1,19 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 
 const TopPrdctDtls = () => {
     const topFoodData = useLoaderData();
     console.log(topFoodData);
 
+    useEffect(() => {
+        document.title = `${topFoodData.food_name}`
+    }, [topFoodData]);
+
     return (
         <div>
             <Navbar />
-            <div className="min-h-screen">
+            <div className="min-h-screen overflow-hidden" data-aos="fade-left">
                 <section className="py-12 font-poppins">
                     <div className="max-w-6xl px-4 mx-auto">
                         <div className="flex flex-wrap mb-24 -mx-4">

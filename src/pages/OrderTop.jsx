@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import img from '../assets/QGTB.gif';
 import Navbar from '../components/Navbar';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider';
 import Swal from 'sweetalert2';
 import axios from 'axios';
@@ -67,13 +67,16 @@ const OrderTop = () => {
             }).catch(err => console.log(err))
         }
 
-
     }
+
+    useEffect(() => {
+        document.title = 'Checkout'
+    }, []);
 
     return (
         <div>
             <Navbar />
-            <section className="py-16 bg-gray-100 ">
+            <section className="py-16 bg-gray-100 overflow-hidden" data-aos="fade-left">
                 <div className=" text-center md:text-left md:ml-[70px] mb-3">
                     <h2 className='text-xl font-mono '>Hi, <span className='text-red-600'>{user.displayName}</span> </h2>
                     <p className='font-mono'>Make Your First Order Now!</p>

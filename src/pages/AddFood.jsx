@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import img from '../assets/rijKyMB7T.gif';
 import Navbar from '../components/Navbar';
 import { AuthContext } from '../AuthProvider';
@@ -49,16 +49,20 @@ function AddFood() {
                     text: 'Now your added food can be seen on all food page',
                     icon: 'success'
                 });
-                
+
                 form.reset();
             }
         }).catch(err => console.log(err));
-    }
+    };
+
+    useEffect(() => {
+        document.title = 'Add Food'
+    }, []);
 
     return (
         <div className="">
             <Navbar />
-            <section className="py-16 bg-gray-100" data-aos="fade-left">
+            <section className="py-16 overflow-hidden bg-gray-100" data-aos="fade-left">
                 <div className=" text-center md:text-left md:ml-[70px] mb-3">
                     <h2 className='text-xl font-mono '>Hi, <span className='text-red-600'>{user.displayName}</span> </h2>
                     <p className='font-mono'>Add your own food item now!</p>

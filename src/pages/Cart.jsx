@@ -40,7 +40,8 @@ function Cart() {
     };
 
     useEffect(() => {
-        axios.get(fetchURL, { withCredentials: true }).then(res => setOrders(res.data)).catch(err => console.log(err))
+        axios.get(fetchURL, { withCredentials: true }).then(res => setOrders(res.data)).catch(err => console.log(err));
+        document.title = 'My Ordered Food'
     }, [fetchURL]);
 
     if (orders.length < 1) {
@@ -65,7 +66,7 @@ function Cart() {
         return (
             <div className="">
                 <Navbar />
-                <section className="py-24 bg-gray-100 font-poppins" data-aos="fade-left">
+                <section className="py-24 bg-gray-100 font-poppins overflow-hidden" data-aos="fade-left">
                     <div className=" py-6 mx-auto max-w-7xl lg:py-4 md:px-6">
                         <div>
                             <h2 className="mb-8 text-3xl font-mono ml-3 md:ml-0"><span className='text-red-600'>{user.displayName}'s</span> Orders</h2>

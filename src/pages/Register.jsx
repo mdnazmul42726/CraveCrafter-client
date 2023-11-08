@@ -46,8 +46,10 @@ const Register = () => {
 
     return (
         <div>
+            <div className="pb-10">
             <Navbar />
-            <div className="hero min-h-screen mt-20">
+            </div>
+            <div className="hero min-h-screen mt-20 overflow-hidden" data-aos="fade-left">
                 <div className="hero-content -mt-52 flex-col lg:flex-row">
                     <div className="mr-20 w-1/2 hidden md:flex">
                         <img src={img} alt="" />

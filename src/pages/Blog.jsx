@@ -1,16 +1,20 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../AuthProvider";
 
 const Blog = () => {
     const blogs = useLoaderData();
     const { user } = useContext(AuthContext);
 
+    useEffect(() => {
+        document.title = 'Blogs'
+    }, []);
+
     return (
         <div className="pb40" >
             <Navbar />
-            <section className="flex items-center justify-center bg-gray-100 lg:h-screen" data-aos="fade-left">
+            <section className="flex items-center justify-center overflow-hidden bg-gray-100 lg:h-screen" data-aos="fade-left">
                 <div className="px-4 py-20 mx-auto max-w-7xl">
                     <div className="flex flex-wrap items-center gap-8 lg:flex-nowrap">
                         <div className="w-full lg:w-1/2">

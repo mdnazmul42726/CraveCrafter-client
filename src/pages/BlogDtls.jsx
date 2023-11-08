@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 
 
 function BlogPost() {
@@ -7,10 +8,14 @@ function BlogPost() {
     const content = data?.blogPost?.content;
     console.log(content);
 
+    useEffect(() => {
+        document.title = `${data.blogPost.title}`
+    }, [data]);
+
     return (
         <div className="">
             <Navbar />
-            <div className="md:px-10 px-4 py-6 mx-auto bg-gray-50 pb-40" data-aos="fade-left">
+            <div className="md:px-10 px-4 py-6 mx-auto bg-gray-50 pb-40 overflow-hidden" data-aos="fade-left">
                 {/* Author and Categories */}
                 <div className="max-w-6xl md:px-10 py-6 mx-auto  ">
                     {/* <div className="md:flex hidden items-center justify-start mt-4 mb-4">

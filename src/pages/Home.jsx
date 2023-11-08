@@ -6,11 +6,16 @@ import { BsFacebook } from 'react-icons/bs';
 import { RiTwitterXFill } from 'react-icons/ri';
 import { Link, useLoaderData } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { useEffect } from 'react';
 // import { FaXTwitter } from 'react-icons/fa';
 
 const Home = () => {
     const topProducts = useLoaderData();
     console.log(topProducts);
+
+    useEffect(() => {
+        document.title = 'CraveCrafter | Home'
+    }, [])
 
     return (
         <div className="mb-36 overflow-hidden">
@@ -21,7 +26,7 @@ const Home = () => {
                     <div className="w-full text-white bg-[url('https://i.ibb.co/xC9mPGv/pexels-mikhail-nilov-8093877.jpg')] bg-cover ">
                         <Navbar />
                         {/* text */}
-                        <div className="lg:w-1/2 ml-10 pb-10" data-aos="fade-right">
+                        <div className="lg:w-1/2 overflow-hidden ml-10 pb-10" data-aos="fade-right">
                             <h1 className="text-5xl mt-7 md:mt-10 lg:mt-20 font-mono">We Love <br />Delicious Foods!</h1>
                             <p className="mt-3 mr-4">Our platform streamlines operations, enhances customer experiences, and empowers chefs and restaurateurs with data-driven insights. Discover the future of restaurant management and dining excellence at CuisineCraft – where culinary expertise meets cutting-edge technology.</p>
                             <div className="mt-10 flex items-center gap-7">
@@ -82,7 +87,7 @@ const Home = () => {
                     <div className="md:w-1/2">
                         <img className='md:w-[90%]' src="https://i.ibb.co/d78QkGt/hero-2.jpg" alt="" />
                     </div>
-                    <div className="md:w-1/2" data-aos="fade-left">
+                    <div className="md:w-1/2 overflow-hidden" data-aos="fade-left">
                         <p className='text-red-500'>About</p>
                         <h1 className='text-3xl font-bold '>Welcome to Crave<span className='text-red-500 font-serif'>Crafter.</span></h1>
                         <p className='mt-10'>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>

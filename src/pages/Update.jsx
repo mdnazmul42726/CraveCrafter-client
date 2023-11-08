@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import img from '../assets/rijKyMB7T.gif';
 import Navbar from '../components/Navbar';
 import { AuthContext } from '../AuthProvider';
@@ -60,11 +60,14 @@ function Update() {
         }).catch(err => console.log(err));
     };
 
+    useEffect(() => {
+        document.title = 'Update Food'
+    }, []);
 
     return (
         <div className="">
             <Navbar />
-            <section className="py-16 bg-gray-100">
+            <section className="py-16 overflow-hidden bg-gray-100" data-aos="fade-left">
                 <div className=" text-center md:text-left md:ml-[70px] mb-3">
                     <h2 className='text-xl font-mono '>Hi, <span className='text-red-600'>{user.displayName}</span> </h2>
                     <p className='font-mono'>Update your food info now!</p>

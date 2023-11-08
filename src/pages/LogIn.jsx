@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../assets/050270aa95e1685d73bfc48562c784b5.jpg'
 import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -33,12 +33,16 @@ const Login = () => {
             console.log(result.user);
             navigate(location.state ? location.state : '/')
         }).catch(err => console.log(err))
-    }
+    };
+
+    useEffect(() => {
+        document.title = 'Login'
+    }, []);
 
     return (
         <div>
             <Navbar />
-            <div className="hero min-h-screen mt-20">
+            <div className="hero mt-20 min-h-screen overflow-hidden" data-aos="fade-left">
                 <div className="hero-content -mt-52 flex-col lg:flex-row">
                     <div className="mr-20 hidden md:flex">
                         <img src={img} alt="" />
