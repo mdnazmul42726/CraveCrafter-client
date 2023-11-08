@@ -7,6 +7,7 @@ import { AuthContext } from '../AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../firebase.init';
+import axios from 'axios';
 
 const Register = () => {
     const { registerUserWithEmailAndPassword, user, popupSignInWithGithub, popupSignInWithGoogle } = useContext(AuthContext);
@@ -22,12 +23,14 @@ const Register = () => {
         const pImg = form.pImg.value;
         const email = form.email.value;
         const password = form.password.value;
+        const user = { name, email };
 
         registerUserWithEmailAndPassword(email, password).then(result => {
             updateProfile(auth.currentUser, { displayName: name, photoURL: pImg });
 
-            toast.success('Account created.', { id: toastId })
-            navigate('/')
+            toast.success('Account created.', { id: toastId });
+            axios.post('http://localhost:5000/user/v1', user).then(res => navigate('/')).catch(err => console.log(err));
+
         }).catch(err => {
             console.log(err);
             toast.error(err.code, { id: toastId });
@@ -36,8 +39,8 @@ const Register = () => {
 
     const handleSocialLogin = (media) => {
         media().then(result => {
-
-            navigate('/');
+            const googleUser = { name: result.user.displayName, email: result.user.email, }
+            axios.post('http://localhost:5000/user/v1', googleUser).then(res => navigate('/')).catch(err => console.log(err));
         }).catch(err => console.log(err))
     }
 
