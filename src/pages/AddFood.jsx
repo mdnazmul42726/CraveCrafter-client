@@ -58,7 +58,7 @@ function AddFood() {
     return (
         <div className="">
             <Navbar />
-            <section className="py-16 bg-gray-100">
+            <section className="py-16 bg-gray-100" data-aos="fade-left">
                 <div className=" text-center md:text-left md:ml-[70px] mb-3">
                     <h2 className='text-xl font-mono '>Hi, <span className='text-red-600'>{user.displayName}</span> </h2>
                     <p className='font-mono'>Add your own food item now!</p>

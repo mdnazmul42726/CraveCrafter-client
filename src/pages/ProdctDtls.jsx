@@ -26,7 +26,7 @@ const ProdctDtls = () => {
         <div>
             <div>
                 <Navbar />
-                <div className="min-h-screen">
+                <div className="min-h-screen" data-aos="fade-left">
                     <section className="py-12 font-poppins">
                         <div className="max-w-6xl px-4 mx-auto">
                             <div className="flex flex-wrap mb-24 -mx-4">

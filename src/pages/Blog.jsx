@@ -10,7 +10,7 @@ const Blog = () => {
     return (
         <div className="pb40" >
             <Navbar />
-            <section className="flex items-center justify-center bg-gray-100 lg:h-screen">
+            <section className="flex items-center justify-center bg-gray-100 lg:h-screen" data-aos="fade-left">
                 <div className="px-4 py-20 mx-auto max-w-7xl">
                     <div className="flex flex-wrap items-center gap-8 lg:flex-nowrap">
                         <div className="w-full lg:w-1/2">
@@ -66,14 +66,14 @@ const Blog = () => {
                 </div>
             </section>
             {/*  */}
-            <div className="mt-20">
+            <div className="mt-20" data-aos="fade-dowon">
                 <div className=" text-center md:text-left md:ml-[70px] mb-5">
                     <h2 className='text-xl font-mono '>Hi, <span className='text-red-600'>{user?.displayName}</span> </h2>
                     <p className='font-mono'>Read our popular blogs!</p>
                 </div>
             </div>
             {/* card */}
-            <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 mt-2 mx-2 md:mx-5 lg:mx-10">
+            <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 mt-2 mx-2 md:mx-5 lg:mx-10" data-aos="fade-up">
                 {blogs.map(blog => <div key={blog._id} className="mb-0 overflow-hidden bg-white rounded shadow ">
                     <div className="relative overflow-hidden h-72">
                         <span className="absolute px-3 py-1 text-xs text-white bg-blue-500 rounded bottom-3 right-3">

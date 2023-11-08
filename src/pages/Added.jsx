@@ -10,13 +10,14 @@ const Added = () => {
     const { user } = useContext(AuthContext);
     const fetchUrl = `http://localhost:5000/foods/added/v1?email=${user.email}`;
     const [addedFood, setAddedFood] = useState([]);
+    console.log(addedFood);
 
     const handleUpdate = (_id) => {
         console.log(_id);
     };
 
     useEffect(() => {
-        axios.get(fetchUrl).then(res => setAddedFood(res.data)).catch(err => console.log(err));
+        axios.get(fetchUrl, { withCredentials: true }).then(res => setAddedFood(res.data)).catch(err => console.log(err));
     }, [fetchUrl]);
 
     if (addedFood.length == 0) {
@@ -30,7 +31,7 @@ const Added = () => {
                             <div className="absolute top-0 bottom-0 left-0 right-0 bg-sky-900 opacity-60"></div>
                             <div className="z-10 px-4 sm:px-6 lg:px-8">
                                 <div className="text-center">
-                                    <h2 className="mb-6 text-4xl font-medium leading-10 tracking-tight text-gray-50 md:text-6xl">
+                                    <h2 className="mb-6 text-4xl font-medium leading-10 tracking-tight text-gray-50 md:text-6xl" data-aos="zoom-out">
                                         Eat good food and stay healthy.
                                     </h2>
                                     <p className="mb-6 tracking-wide text-gray-300 sm:mt-5 sm:text-md sm:max-w-xl sm:mx-auto md:mt-5">

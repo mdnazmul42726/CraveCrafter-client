@@ -26,8 +26,8 @@ const Navbar = () => {
                         'Logout Successful.',
                         'success'
                     );
-
-                    axios.get('http://localhost:5000/jwt/logout').then(res => console.log(res.data)).catch(err => console.log(err))
+                    
+                    axios.get('http://localhost:5000/jwt/logout', { withCredentials: true }).then(res => console.log(res.data)).catch(err => console.log(err))
                 }).catch(err => console.log(err))
 
             }

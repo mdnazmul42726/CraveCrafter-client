@@ -12,11 +12,8 @@ const Home = () => {
     const topProducts = useLoaderData();
     console.log(topProducts);
 
-  
-
-
     return (
-        <div className="mb-36">
+        <div className="mb-36 overflow-hidden">
             <div className="">
                 {/* <div className=" md:min-h-screen"></div> */}
                 {/* hero */}
@@ -24,7 +21,7 @@ const Home = () => {
                     <div className="w-full text-white bg-[url('https://i.ibb.co/xC9mPGv/pexels-mikhail-nilov-8093877.jpg')] bg-cover ">
                         <Navbar />
                         {/* text */}
-                        <div className="lg:w-1/2 ml-10 pb-10">
+                        <div className="lg:w-1/2 ml-10 pb-10" data-aos="fade-right">
                             <h1 className="text-5xl mt-7 md:mt-10 lg:mt-20 font-mono">We Love <br />Delicious Foods!</h1>
                             <p className="mt-3 mr-4">Our platform streamlines operations, enhances customer experiences, and empowers chefs and restaurateurs with data-driven insights. Discover the future of restaurant management and dining excellence at CuisineCraft – where culinary expertise meets cutting-edge technology.</p>
                             <div className="mt-10 flex items-center gap-7">
@@ -81,11 +78,11 @@ const Home = () => {
                     </div>
                 </div>
                 {/* About */}
-                <div className="flex flex-col md:flex-row w-11/12 mx-auto gap-5 mt-20 md:mt-20 lg:mt-36">
+                <div className="flex flex-col md:flex-row w-11/12 mx-auto gap-5 mt-20 md:mt-20 lg:mt-36" >
                     <div className="md:w-1/2">
                         <img className='md:w-[90%]' src="https://i.ibb.co/d78QkGt/hero-2.jpg" alt="" />
                     </div>
-                    <div className="md:w-1/2">
+                    <div className="md:w-1/2" data-aos="fade-left">
                         <p className='text-red-500'>About</p>
                         <h1 className='text-3xl font-bold '>Welcome to Crave<span className='text-red-500 font-serif'>Crafter.</span></h1>
                         <p className='mt-10'>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
@@ -108,14 +105,14 @@ const Home = () => {
                 </div>
             </div>
             {/* spisalist */}
-            <div className="bg-[#F7F8F9] mt-40">
+            <div className="bg-[#F7F8F9] mt-40" data-aos="fade-up">
                 <div className="text-center pt-36 pb-20">
                     <p className='text-red-500'>Specialties</p>
                     <h1 className='text-3xl font-bold '> Special Dishes</h1>
                 </div>
                 {/* section 1 */}
                 <div className="flex flex-col md:flex-row justify-between w-11/12 mx-auto">
-                    <div className="">
+                    <div className="" data-aos="fade-right">
                         <div className="flex"><h1 className='text-5xl font-bold'>01.</h1><p className='mt-5 ml-2 font-bold'>________________</p></div>
                         <div className="ml-5 md:ml-20 mt-5">
                             <h2 className='text-3xl font-mono text-red-500'>Beef</h2>
@@ -136,7 +133,7 @@ const Home = () => {
                         <div className="">
                             <img src="https://i.ibb.co/PZZrXd9/salmon-zucchini.jpg" alt="" />
                         </div>
-                        <div className="mt-10 md:mt-0">
+                        <div className="mt-10 md:mt-0" data-aos="fade-left">
                             <div className="flex"><h1 className='text-5xl font-bold'>02.</h1><p className='mt-5 ml-2 font-bold'>________________</p></div>
                             <div className="ml-5 md:ml-20 mt-5">
                                 <h2 className='text-3xl font-mono text-red-500'>Salmon</h2>
@@ -151,7 +148,7 @@ const Home = () => {
             </div>
 
             {/* our top selling foods card */}
-            <div className="my-36">
+            <div className="my-36" data-aos="zoom-out">
                 <h1 className='text-4xl font-bold text-center'>Top Selling Foods</h1>
                 <div className="grid grid-cols-1 md:grid-cols-3">
                     {topProducts.map(product => <div key={product._id} className="mx-auto mt-11 w-80 transform overflow-hidden rounded-md shadow-md duration-300 hover:scale-105 hover:shadow-lg">
@@ -172,7 +169,7 @@ const Home = () => {
                 </div>
             </div>
             {/* meet the tram */}
-            <div className="mt-20 ">
+            <div className="mt-20 " data-aos="zoom-in">
                 <div className="container max-w-7xl px-4">
                     <div className="flex flex-wrap justify-center text-center mb-24">
                         <div className="w-full lg:w-6/12 px-4">
@@ -308,7 +305,9 @@ const Home = () => {
             {/* 1 */}
             {/* <!-- component -->
             <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css')</style> */}
-            <div className="min-w-screen min-h-screen bg-gray-50 flex items-center justify-center">
+
+            {/* testominial */}
+            <div className="min-w-screen min-h-screen bg-gray-50 flex items-center justify-center" data-aos="zoom-in">
                 <div className="w-full bg-white border-t border-b border-gray-200 px-5 py-16 md:py-24 text-gray-800">
                     <div className="w-full max-w-6xl mx-auto">
                         <div className="text-center max-w-xl mx-auto">
