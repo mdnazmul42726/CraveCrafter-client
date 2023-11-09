@@ -141,6 +141,9 @@ const Foods = () => {
                     <option value="10">10</option>
                     <option value="15">15</option>
                     <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
                 </select>
                 <button onClick={handleNextPage}
                     className="relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-100">

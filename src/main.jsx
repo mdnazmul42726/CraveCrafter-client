@@ -20,6 +20,9 @@ import AddFood from "./pages/AddFood";
 import Cart from "./pages/Cart";
 import Added from "./pages/Added";
 import Update from "./pages/Update";
+import About from "./pages/About";
+import Teamp from "./pages/Team";
+import BookP from "./pages/BookP";
 const router = createBrowserRouter([
   {
     path: "/", element: <Root />, errorElement: <ErrorPage />,
@@ -32,7 +35,13 @@ const router = createBrowserRouter([
 
       { path: "/top-food/:id", element: <TopPrdctDtls />, loader: ({ params }) => fetch(`https://crave-crafter-server.vercel.app/top-food/v1/${params.id}`) },
 
-      { path: "/foods", element: <Foods />},
+      { path: "/foods", element: <Foods /> },
+
+      { path: "/about", element: <About /> },
+
+      { path: "/team", element: <Teamp /> },
+
+      { path: "/reservation", element: <BookP /> },
 
       { path: "/food/:id", element: <ProdctDtls />, loader: ({ params }) => fetch(`https://crave-crafter-server.vercel.app/food/v1/${params.id}`) },
 

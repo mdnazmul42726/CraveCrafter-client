@@ -1,12 +1,13 @@
 import { BsGooglePlay, BsDoorOpen } from 'react-icons/bs';
-import { AiFillApple, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillApple } from 'react-icons/ai';
 import { GoRocket } from 'react-icons/go';
 import { BiLeaf } from 'react-icons/bi';
-import { BsFacebook } from 'react-icons/bs';
-import { RiTwitterXFill } from 'react-icons/ri';
 import { Link, useLoaderData } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { useEffect } from 'react';
+import Team from '../components/Team';
+import Book from '../components/Book';
+import Swal from 'sweetalert2';
 // import { FaXTwitter } from 'react-icons/fa';
 
 const Home = () => {
@@ -15,7 +16,15 @@ const Home = () => {
 
     useEffect(() => {
         document.title = 'CraveCrafter | Home'
-    }, [])
+    }, []);
+
+    const app = () => {
+        Swal.fire({
+            title: 'Not Ready Yet',
+            text: 'Thank you for your interest. Our mobile app is not ready for production yet. We are working on it very quickly. we will let you know when it is available',
+            icon: 'info'
+        });
+    }
 
     return (
         <div className="mb-36 overflow-hidden">
@@ -29,7 +38,7 @@ const Home = () => {
                         <div className="lg:w-1/2 overflow-hidden ml-10 pb-10" data-aos="fade-right">
                             <h1 className="text-5xl mt-7 md:mt-10 lg:mt-20 font-mono">We Love <br />Delicious Foods!</h1>
                             <p className="mt-3 mr-4">Our platform streamlines operations, enhances customer experiences, and empowers chefs and restaurateurs with data-driven insights. Discover the future of restaurant management and dining excellence at CuisineCraft – where culinary expertise meets cutting-edge technology.</p>
-                            <div className="mt-10 flex items-center gap-7">
+                            <div className="mt-10 flex items-center gap-7" onClick={app}>
                                 <Link to={'/foods'}><button className="btn bg-[#F34949] px-7 hover:bg-[#F34949] hover:scale-105 text-white rounded-full">Explore Menu</button></Link>
                                 <button className='hidden md:flex font-bold hover:text-red-600'><BsGooglePlay className='text-2xl hover:scale-110 transition-all hover:text-sky-400 mt-1 mr-2' /> <AiFillApple className='text-3xl hover:scale-110 transition-all hover:text-sky-300 mr-2' /><span className='mt-1'>Download App</span></button>
                             </div>
@@ -174,139 +183,7 @@ const Home = () => {
                 </div>
             </div>
             {/* meet the tram */}
-            <div className="mt-20 " data-aos="zoom-in">
-                <div className="container max-w-7xl px-4">
-                    <div className="flex flex-wrap justify-center text-center mb-24">
-                        <div className="w-full lg:w-6/12 px-4">
-                            <h1 className="text-gray-900 text-4xl font-bold mb-8">
-                                Meet the Team
-                            </h1>
-                            <p className="text-gray-700 text-lg font-light">
-                                With over 100 years of combined experience, we ve got a well-seasoned team at the helm.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex flex-wrap">
-                        <div className="w-full md:w-6/12 lg:w-3/12 hover:scale-105 duration-300 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div className="flex flex-col">
-                                <a href="#" className="mx-auto">
-                                    <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="https://i.ibb.co/tMmZvyv/chef-1.jpg" />
-                                </a>
-                                <div className="text-center mt-6">
-                                    <h1 className="text-gray-900 text-xl font-bold mb-1">
-                                        Aaron Patel
-                                    </h1>
-                                    <div className="text-gray-700 font-light mb-2">
-                                        Founder CEO
-                                    </div>
-                                    <div className="flex items-center justify-center opacity-50 hover:opacity-100
-                                transition-opacity duration-300">
-
-                                        <Link className="flex rounded-full h-20 w-8">
-                                            <i className="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"><BsFacebook className='text-xl' /></i> </Link>
-
-                                        <Link className="flex rounded-full h-20 w-8">
-                                            <i className="mdi mdi-twitter text-blue-300 mx-auto mt-2"><AiFillLinkedin className='text-xl' /></i>
-                                        </Link>
-                                        <Link className="flex rounded-full  h-20 w-8">
-                                            <i className="mdi mdi-instagram  mx-auto mt-2 text-black"><RiTwitterXFill className='text-xl' /></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-3/12 mb-6 hover:scale-105 duration-300 px-6 sm:px-6 lg:px-4">
-                            <div className="flex flex-col">
-
-                                <a href="#" className="mx-auto">
-                                    <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="https://i.ibb.co/xYs5Khv/chef-2.jpg" />
-                                </a>
-                                <div className="text-center mt-6">
-
-                                    <h1 className="text-gray-900 text-xl font-bold mb-1">
-                                        Daniel Tebas
-                                    </h1>
-                                    <div className="text-gray-700 font-light mb-2">
-                                        Chef
-                                    </div>
-                                    <div className="flex items-center justify-center opacity-50 hover:opacity-100
-                                transition-opacity duration-300">
-
-                                        <Link className="flex rounded-full h-20 w-8">
-                                            <i className="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"><BsFacebook className='text-xl' /></i> </Link>
-
-                                        <Link className="flex rounded-full h-20 w-8">
-                                            <i className="mdi mdi-twitter text-blue-300 mx-auto mt-2"><AiFillLinkedin className='text-xl' /></i>
-                                        </Link>
-                                        <Link className="flex rounded-full  h-20 w-8">
-                                            <i className="mdi mdi-instagram  mx-auto mt-2 text-black"><RiTwitterXFill className='text-xl' /></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-3/12 hover:scale-105 duration-300 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div className="flex flex-col">
-
-                                <a href="#" className="mx-auto">
-                                    <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="https://i.ibb.co/VvKJkqK/pexels-2102934.jpg" />
-                                </a>
-                                <div className="text-center mt-6">
-                                    <h1 className="text-gray-900 text-xl font-bold mb-1">
-                                        Jon Snow
-                                    </h1>
-                                    <div className="text-gray-700 font-light mb-2">
-                                        Chef
-                                    </div>
-                                    <div className="flex items-center justify-center opacity-50 hover:opacity-100
-                                transition-opacity duration-300">
-                                        <Link className="flex rounded-full h-20 w-8">
-                                            <i className="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"><BsFacebook className='text-xl' /></i> </Link>
-
-                                        <Link className="flex rounded-full h-20 w-8">
-                                            <i className="mdi mdi-twitter text-blue-300 mx-auto mt-2"><AiFillLinkedin className='text-xl' /></i>
-                                        </Link>
-                                        <Link className="flex rounded-full  h-20 w-8">
-                                            <i className="mdi mdi-instagram  mx-auto mt-2 text-black"><RiTwitterXFill className='text-xl' /></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-full md:w-6/12 lg:w-3/12 hover:scale-105 duration-300 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div className="flex flex-col">
-                                <a href="#" className="mx-auto">
-                                    <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="https://i.ibb.co/0yFkH24/chef-3.jpg" />
-                                </a>
-                                <div className="text-center mt-6">
-                                    <h1 className="text-gray-900 text-xl font-bold mb-1">
-                                        Patel Ex
-                                    </h1>
-                                    <div className="text-gray-700 font-light mb-2">
-                                        Chef
-                                    </div>
-                                    <div className="flex items-center justify-center opacity-50 hover:opacity-100
-                                transition-opacity duration-300">
-                                        <Link className="flex rounded-full h-20 w-8">
-                                            <i className="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"><BsFacebook className='text-xl' /></i> </Link>
-
-                                        <Link className="flex rounded-full h-20 w-8">
-                                            <i className="mdi mdi-twitter text-blue-300 mx-auto mt-2"><AiFillLinkedin className='text-xl' /></i>
-                                        </Link>
-                                        <Link className="flex rounded-full  h-20 w-8">
-                                            <i className="mdi mdi-instagram  mx-auto mt-2 text-black"><RiTwitterXFill className='text-xl' /></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Team />
             {/* 1 */}
             {/* <!-- component -->
             <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css')</style> */}
@@ -424,33 +301,7 @@ const Home = () => {
                 </div>
             </div>
             {/* Book */}
-
-            <div className="bg-[url('https://i.ibb.co/0J5pyT5/reservation-bg.jpg')] md:min-h-screen">
-                <div className="w-full md:w-96 h-[500px] bg-white md:ml-10 ">
-                    <p className='text-red-500 text-center pt-10 font-mono'>Reservation</p>
-                    <h1 className='text-3xl text-center font-sans'>Book Now</h1>
-                    <form className='p-10'>
-                        <input className='p-2 w-full border rounded-sm mb-3' type="text" name="" id="" placeholder='Name' required />
-                        <input className='p-2 w-full border rounded-sm mb-3' type="text" name="" id="" placeholder='Email' required />
-                        <input className='p-2 w-full border rounded-sm' type="text" name="" id="" placeholder='Phone' required />
-                        <div className="flex mt-3 gap-3">
-                            <input className='p-2 w-full border rounded-sm' type="date" name="" id="" placeholder='Date' required />
-                            <input className='p-2 w-full border rounded-sm' type="time" name="" id="" placeholder='Time' required />
-                        </div>
-                        <select className='p-2 w-full border rounded-sm mt-3' name="" id="" required>
-                            <option value="N/A">Person</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">5</option>
-                            <option value="6">6</option>
-                        </select>
-                        <div className="flex justify-center">
-                            <button type='submit' className="btn mt-5 ml-3 bg-[#F34949] px-7 hover:bg-[#F34949] hover:scale-105 text-white rounded-full">Book A Table</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <Book />
         </div>
     );
 };

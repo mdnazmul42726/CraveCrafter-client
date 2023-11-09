@@ -1,8 +1,7 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import axios from "axios";
 
 const Navbar = () => {
@@ -20,13 +19,13 @@ const Navbar = () => {
             confirmButtonText: 'Yes, Sign Out!'
         }).then((result) => {
             if (result.isConfirmed) {
-                logOut().then(result => {
+                logOut().then(() => {
                     Swal.fire(
                         'Good Luck!',
                         'Logout Successful.',
                         'success'
                     );
-                    
+
                     axios.get('https://crave-crafter-server.vercel.app/jwt/logout', { withCredentials: true }).then(res => console.log(res.data)).catch(err => console.log(err))
                 }).catch(err => console.log(err))
 
@@ -48,7 +47,7 @@ const Navbar = () => {
                             <NavLink to={'/foods'} className={({ isActive }) => isActive ? 'text-red-600 font-bold' : 'text-red-600'}>Foods</NavLink>
                         </ul>
                     </div>
-                    <a className="text-3xl font-bold text-white">Crave<span className="font-serif text-[#E32106]">Crafter.</span></a>
+                    <Link to={'/'} className="text-3xl font-bold text-white">Crave<span className="font-serif text-[#E32106]">Crafter.</span></Link>
                 </div>
 
                 <div className="navbar-end">

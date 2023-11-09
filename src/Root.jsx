@@ -16,6 +16,11 @@ const Root = () => {
                 <div className="">
                     <a className="text-3xl font-bold" data-aos="fade-right">Crave<span className="font-serif text-[#E32106]">Crafter.</span></a>
                     <p className="mt-3 mr-4 opacity-75">Our platform streamlines operations, enhances customer experiences, and empowers chefs and restaurateurs with data-driven insights. Discover the future of restaurant management and dining excellence at CuisineCraft – where culinary expertise meets cutting-edge technology.</p>
+                    <div className="flex gap-4 text-red-400 font-semibold mt-4">
+                        <Link to={"/about"}>About</Link>
+                        <Link to={"/team"}>Team</Link>
+                        <Link to={"/reservation"}>Reservation</Link>
+                    </div>
                     <div className="mt-10 text-xl flex gap-3">
                         <Link><BsFacebook className="hover:text-red-600 transition-all scale-110" /></Link>
                         <Link> <BsInstagram className="hover:text-red-600 transition-all scale-110" /></Link>
@@ -53,7 +58,7 @@ const Root = () => {
                         <p>Closed</p>
                     </div>
                 </div>
-                <div className="" data-aos="fade-left">
+                <div className="pr-5" data-aos="fade-left">
                     <h1 className="text-2xl">Newsletter</h1>
                     <p className="opacity-75">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <form>
